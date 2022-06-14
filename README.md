@@ -2,7 +2,7 @@
 ***************************************
 This is the clone of the Myntra Website
 ***************************************
-Team Member	Student ID
+Team Member	                Student ID
 Bhupendra Kumar Chandrakar	fp04_289
 Shibshankar Padhy	        fw19_0520
 Sanjay Gupta	            fw19_1090
