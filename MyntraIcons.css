@@ -1,0 +1,176 @@
+/* This contain Myntra icons */
+
+.myntraweb-sprite {
+   background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+   background-size: 1404px 105px;
+   display: inline-block;
+}
+.sprites-mfuGoldCoinLarge {
+   background-position: -1028px -74px;
+   height: 60px;
+   width: 60px;
+}
+.sprites-mfuGoldCoinSmall {
+   background-position: -1058px -81px;
+   height: 60px;
+   width: 60px;
+}
+.sprites-mfgLockIcon {
+   background-position: -43px -37px;
+   height: 22px;
+   width: 24px;
+}
+.sprites-mfgUnlockIcon {
+   background-position: -43px -14px;
+   height: 22px;
+   width: 24px;
+}
+.sprites-mfgRightArrow {
+   background-position: -46px -58px;
+   height: 14px;
+   width: 10px;
+}
+.sprites-mfgRightArrowDark {
+   background-position: -46px -71px;
+   height: 14px;
+   width: 10px;
+}
+.sprites-mfgBarTop {
+   background-position: 1px -170px;
+   height: 15px;
+}
+.sprites-whiteRightArrow {
+   background-position: -2284px -21px;
+   width: 20px;
+   height: 16px;
+}
+.sprites-notWishlisted {
+   width: 17px;
+   height: 22px;
+   background-position: -315px -186px;
+}
+.sprites-wishlisted {
+   width: 17px;
+   height: 22px;
+   background-position: -333px -186px;
+}
+.sprites-whiteBag {
+   background-position: -2283px -40px;
+   width: 23px;
+   height: 22px;
+}
+.sprites-footer-facebook {
+   background-position: -2023px 0;
+   width: 20px;
+   height: 21px;
+}
+.sprites-lightTick {
+   background-position: -1097px 0;
+   width: 12px;
+   height: 10px;
+}
+.sprites-moreColors {
+   width: 40px;
+   height: 40px;
+   background-position: -1337px 0;
+}
+.sprites-footer-twitter {
+   background-position: -2045px 0;
+   width: 23px;
+   height: 21px;
+}
+.sprites-footer-instagram {
+   background-position: -1392px 0;
+   width: 21px;
+   height: 20px;
+}
+.sprites-footer-youtube {
+   background-position: -1361px 0;
+   width: 31px;
+   height: 20px;
+}
+.sprites-three-colview-normal {
+   width: 19px;
+   height: 13px;
+   background-position: 0 0;
+}
+.sprites-three-colview-selected {
+   width: 19px;
+   height: 13px;
+   background-position: -19px 0;
+}
+.sprites-four-colview-selected {
+   width: 21px;
+   height: 13px;
+   background-position: -38px 0;
+}
+.sprites-four-colview {
+   width: 21px;
+   height: 13px;
+   background-position: -59px 0;
+}
+.sprites-addnewbutton {
+   width: 24px;
+   height: 24px;
+   background-position: -80px 0;
+}
+.sprites-bestOfferIcon {
+   background-position: -211px -58px;
+   width: 18px;
+   height: 22px;
+}
+.sprites-productDetailsIcon {
+   background-position: -231px -58px;
+   width: 21px;
+   height: 22px;
+}
+.sprites-productRatingsIcon {
+   background-position: -276px -60px;
+   width: 21px;
+   height: 22px;
+}
+.sprites-productRatingsLowIcon {
+   background-position: -240px -28px;
+   width: 24px;
+   height: 24px;
+}
+.sprites-productRatingsAverageIcon {
+   background-position: -216px -28px;
+   width: 24px;
+   height: 24px;
+}
+.sprites-productRatingsGoodIcon {
+   background-position: -194px -28px;
+   width: 24px;
+   height: 24px;
+}
+.sprites-productRatingsExcellentIcon {
+   background-position: -171px -28px;
+   width: 24px;
+   height: 24px;
+}
+.sprites-productRatingsGrayIcon {
+   background-position: -265px -28px;
+   width: 12px;
+   height: 12px;
+}
+.sprites-deliveryOptionsIcon {
+   background-position: -252px -58px;
+   width: 23px;
+   height: 22px;
+}
+.sprites-similarProductsIcon {
+   background-position: -142px -58px;
+   width: 24px;
+   height: 20px;
+}
+.sprites-alertbig {
+   width: 24px;
+   height: 24px;
+   background-position: -104px 0;
+}
+.sprites-alertsmall {
+   width: 17px;
+   height: 17px;
+   background-position: -128px 0;
+}

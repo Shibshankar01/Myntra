@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="productsPage.css">
+    <link rel="stylesheet" href="MyntraIcons.css">
+</head>
+<body>
+    <div id="first-heading">
+        <span>Home / </span><span>Clothing / </span>
+    </div>
+    <div id="second-heading">
+        
+    </div>
+    <div></div>
+    <div id="sortSection">
+        <div id="firstSecion">
+            <select id="filterBundles">
+                <option value="">Bundles</option>
+            </select>
+            <select id="filterCountry">
+                <option value="">Country of Origin</option>
+            </select>
+            <select id="filterSize">
+                <option value="">Size</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="3XL">3XL</option>
+            </select>
+        </div> 
+        <select id="sort">
+            <option value="">Sort by: <span class="bold">Recommended</span></option>
+            <option value="">What's New</option>
+            <option value="sortPopularity">Popularity</option>
+            <option value="sortDiscount">Better Discount</option>
+            <option value="sortPriceDescending">Price: High to Low</option>
+            <option value="sortPriceAscending">Price: Low to High</option>
+            <option value="sortCustomerRating">Customer Rating</option>
+        </select>
+    </div>
+    
+    <div id="container"></div>
+</body>
+</html>
+<script src="productsPage.js"></script>
