@@ -13,6 +13,14 @@ span.innerText = clickedOn;
 span.style.fontWeight="bolder"
 firstHeadingSpan.after(span);
 
+let secondHeadingSpan = document.querySelector("#second-heading>span:first-child");
+let spanItems = document.createElement("span");
+spanItems.innerText=" - "+filteredData.length;
+secondHeadingSpan.before(spanItems);
+let secondHeadingSpanTwo = document.querySelector("#second-heading>span:first-child");
+let spanTwo = document.createElement("span");
+spanTwo.innerText=clickedOn+"s Items"
+secondHeadingSpanTwo.before(spanTwo)
 
 let sortSelect = document.querySelector("#sort");
 sortSelect.addEventListener("change", sort);
@@ -85,6 +93,8 @@ function sort() {
          return b.counter-a.counter;
       });
       displayProducts(filteredData)
+   }else{
+      window.location.reload();
    }
 }
 
