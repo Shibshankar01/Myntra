@@ -173,7 +173,7 @@
 }
 
 /* Styles for Bag Page */
-.header {
+.navbar-header {
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -182,15 +182,15 @@
    letter-spacing: 2px;
    font-weight: 600;
 }
-.header > .secureContainer,
-.logo {
+.navbar-secureContainer,
+.navbar-logo {
    width: 25%;
    display: flex;
    justify-content: center;
    align-items: center;
    font-size: 12px;
 }
-.header > .checkout-steps {
+.navbar-checkout-steps {
    width: 40%;
    display: flex;
    justify-content: center;
@@ -223,14 +223,6 @@
    flex-direction: column;
    gap: 8px;
 }
-.block > .right-block {
-   width: 40%;
-   padding-right: 15px;
-   padding-top: 15px;
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
-}
 
 .addressStrip {
    padding: 16px;
@@ -256,6 +248,11 @@
    border-radius: 4px;
    border: 1px solid #eaeaec;
 }
+.offer-title {
+   font-weight: 700;
+   font-size: 12px;
+   color: #535766;
+}
 .offer-items > li {
    font-size: 13px;
    color: #282c3f;
@@ -263,6 +260,9 @@
 }
 .offer-hide {
    display: none;
+   font-size: 13px;
+   color: #282c3f;
+   margin-left: 6%;
 }
 
 .more-text {
@@ -270,6 +270,7 @@
    color: #ff3f6c;
    font-size: 14px;
    cursor: pointer;
+   font-weight: 600;
 }
 .itemContainer-item {
    padding: 8px;
@@ -302,28 +303,226 @@
    display: flex;
    margin: 8px 0px;
 }
+.item-qty,
+.item-size {
+   display: inline-block;
+   white-space: nowrap;
+   padding: 2px 8px;
+   background: #f5f5f6;
+   color: #282c3f;
+   font-weight: 600;
+   cursor: pointer;
+   margin-right: 12px;
+   border-radius: 2px;
+   font-size: 14px;
+   line-height: 16px;
+}
 .itemContainer-itemRight {
    width: 70%;
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
 }
+.itemContainer-soldby {
+   font-size: 12px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 62%;
+   color: #7b7d83;
+}
+
 .item-price {
    display: flex;
    /* margin-top: 15px; */
 }
 
 /* Right Block styling */
-.{
-   donationStrip-Header
+
+.block > .right-block {
+   width: 45%;
+   padding-left: 15px;
+   padding-top: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
 }
 
+.donationStrip-container {
+   position: relative;
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 15px;
+}
+.donationStrip-Header {
+   margin-bottom: 24px;
+   font-weight: 600;
+   font-size: 12px;
+   color: #535766;
+}
+.donationStrip-icon {
+   fill: #ff3f6c;
+}
+.donationStrip-title > span {
+   font-weight: 600;
+   font-size: 12px;
+   margin-left: 5%;
+}
+
+.donationStrip-pill {
+   display: flex;
+   gap: 10px;
+   margin-top: 15px;
+}
+.pillView-pill {
+   cursor: pointer;
+   border-radius: 40px;
+   height: fit-content;
+   border: 1px solid #d4d5d9;
+   color: #282c3f;
+   font-weight: 700;
+   font-size: 14px;
+   padding: 4px 10px;
+}
+.donationStrip-input {
+   width: 35px;
+   border: none;
+   outline: none;
+   font-weight: 700;
+}
+/* .donationStrip-
+} */
+.coupons-container {
+   position: relative;
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 15px;
+}
+.coupons-header {
+   margin-bottom: 15px;
+   font-weight: 600;
+   font-size: 12px;
+   color: #535766;
+}
+.coupons-content {
+   font-weight: 600;
+   font-size: 12px;
+}
+.coupons-label {
+   margin-left: 5%;
+}
+.coupons-apply {
+   position: absolute;
+   bottom: 15px;
+   right: 5px;
+}
+.giftWrap-container {
+   position: relative;
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 15px;
+}
+.giftWrap-header {
+   margin-bottom: 15px;
+   font-weight: 600;
+   font-size: 12px;
+   color: #535766;
+}
+.giftWrap-content {
+   background: #fff1ec;
+   font-size: 12px;
+   border-radius: 4px;
+   display: flex;
+   gap: 20px;
+   padding: 10px;
+}
+
+.order-btn {
+   width: 100%;
+   letter-spacing: 1px;
+   font-size: 14px;
+   font-weight: 600;
+   border-radius: 2px;
+   border: none;
+   padding: 10px 16px;
+   background-color: rgb(255, 63, 108);
+   color: rgb(255, 255, 255);
+   cursor: pointer;
+}
+
+.priceBlock-container {
+   position: relative;
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 15px;
+}
+.priceBlock-priceHeader {
+   margin-bottom: 15px;
+   font-weight: 600;
+   font-size: 12px;
+   color: #535766;
+}
+.priceBreakUp-orderSummary {
+   font-size: 14px;
+   color: #282c3f;
+}
+.priceDetail-row {
+   display: flex;
+   justify-content: space-between;
+}
+.priceDetail-value {
+   font-weight: 500;
+}
+.total-container {
+   font-weight: 600;
+}
+
+/* Model CSS */
+.modal {
+   display: none;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(68, 67, 67, 0.6);
+   z-index: 3;
+}
+.dialogs-Container {
+   position: relative;
+   width: 300px;
+   top: 30%;
+   margin: auto;
+   padding: 0 16px;
+   background-color: white;
+   padding: 15px;
+}
+.modal-cancelIcon {
+   position: absolute;
+   right: 15px;
+}
+.dialogs-header {
+   padding: 6px 0 18px 8px;
+   font-weight: 600;
+   font-size: 16px;
+   border-bottom: 1px solid #f5f5f6;
+}
+.dialogs-list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px 2px;
+   padding: 15px 10px;
+}
+.dialogs-item {
+   cursor: pointer;
+   font-size: 16px;
+   padding: 8px 14px;
+   border: 1px solid #535766;
+   border-radius: 50px;
+   margin-right: 12px;
+   font-weight: 600;
+}
 /* Quick Styling CSS */
+
 .btn-111 {
    font-size: 12px;
    position: absolute;
-   top: 0px;
-   right: 0px;
    padding: 4px 16px;
    font-weight: 600;
    border-radius: 2px;
@@ -331,6 +530,45 @@
    color: rgb(255, 63, 108);
    border: 1px solid #ff527b;
    cursor: pointer;
+}
+.btn-222 {
+   margin-top: 8px;
+   font-size: 12px;
+   font-weight: 600;
+   border-radius: 2px;
+   border: none;
+   background-color: transparent;
+   color: rgb(255, 63, 108);
+   cursor: pointer;
+}
+.btn-333 {
+   width: 100%;
+   letter-spacing: 1px;
+   margin-top: 16px;
+   margin-bottom: 16px;
+   font-size: 14px;
+   font-weight: 600;
+   border-radius: 2px;
+   border: none;
+   padding: 10px 16px;
+   background-color: rgb(255, 63, 108);
+   color: rgb(255, 255, 255);
+   cursor: pointer;
+}
+.KnowMore {
+   color: #ff3f6c;
+   font-weight: 600;
+   cursor: pointer;
+   width: fit-content;
+   font-size: 14px;
+   margin-top: 10px;
+}
+.priceDetail-applyCoupon {
+   color: #ff3f6c;
+   font-weight: 600;
+   cursor: pointer;
+   width: fit-content;
+   font-size: 12px;
 }
 .width-80 {
    width: 80%;
