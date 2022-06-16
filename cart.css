@@ -68,6 +68,11 @@
    height: 100%;
    cursor: pointer;
 }
+
+.price-card {
+   display: flex;
+   align-items: center;
+}
 /* Rating Desing */
 .rating-card {
    display: flex;
@@ -93,6 +98,13 @@
 
 .sizebtn:hover {
    border: 1px solid #ff3f6c;
+}
+
+.sizebtn-selected {
+   border: 1px solid #ff3f6c;
+   background-color: #fff;
+   color: #ff3f6c !important;
+   font-weight: 700;
 }
 
 .btn-card {
@@ -134,10 +146,14 @@
    width: fit-content;
    border-radius: 5px;
    padding: 0px 8px;
+   display: flex;
+   align-items: center;
+   margin-top: 15px;
 }
 .pin > input {
    border: none;
    height: 30px;
+   width: 7em;
 }
 
 .pin > input:focus {
@@ -156,9 +172,173 @@
    font-size: 12px;
 }
 
+/* Styles for Bag Page */
+.header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 60px;
+   border-bottom: 1px solid #f5f5f6;
+   letter-spacing: 2px;
+   font-weight: 600;
+}
+.header > .secureContainer,
+.logo {
+   width: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 12px;
+}
+.header > .checkout-steps {
+   width: 40%;
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+   font-size: 12px;
+}
+.divider {
+   border-top: 1px dashed #696b79;
+   height: 4px;
+   width: 30px;
+   margin-top: 10px;
+}
+.active {
+   color: #20bd99;
+   border-bottom: 2px solid #20bd99;
+}
+
+.block {
+   display: flex;
+   max-width: 900px;
+   margin: auto;
+}
+
+.block > .left-block {
+   width: 60%;
+   padding-right: 15px;
+   border-right: 1px solid #eaeaec;
+   padding-top: 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+.block > .right-block {
+   width: 40%;
+   padding-right: 15px;
+   padding-top: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.addressStrip {
+   padding: 16px;
+   border-radius: 4px;
+   border: 1px solid #eaeaec;
+   display: flex;
+   justify-content: space-between;
+   cursor: pointer;
+}
+
+.addressStrip-change {
+   padding: 8px 16px;
+   font-size: 10px;
+   font-weight: 600;
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(255, 63, 108);
+   border: 1px solid rgb(255, 63, 108);
+   cursor: pointer;
+}
+.offerStrip {
+   padding: 16px;
+   border-radius: 4px;
+   border: 1px solid #eaeaec;
+}
+.offer-items > li {
+   font-size: 13px;
+   color: #282c3f;
+   margin-left: 6%;
+}
+.offer-hide {
+   display: none;
+}
+
+.more-text {
+   margin-left: 6%;
+   color: #ff3f6c;
+   font-size: 14px;
+   cursor: pointer;
+}
+.itemContainer-item {
+   padding: 8px;
+   border-radius: 4px;
+   border: 1px solid #eaeaec;
+   display: flex;
+   justify-content: space-around;
+}
+.itemContainer-tickIcon {
+   position: absolute;
+   margin: 5px;
+   fill: #ff3f6c;
+}
+
+.itemContainer-itemLeft {
+   width: 25%;
+   height: 150px;
+}
+.itemContainer-itemLeft > img {
+   width: 100%;
+   height: 100%;
+}
+.itemContainer-title {
+   width: 90%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+.sizeQtyContainer {
+   display: flex;
+   margin: 8px 0px;
+}
+.itemContainer-itemRight {
+   width: 70%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+.item-price {
+   display: flex;
+   /* margin-top: 15px; */
+}
+
+/* Right Block styling */
+.{
+   donationStrip-Header
+}
+
 /* Quick Styling CSS */
+.btn-111 {
+   font-size: 12px;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   padding: 4px 16px;
+   font-weight: 600;
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(255, 63, 108);
+   border: 1px solid #ff527b;
+   cursor: pointer;
+}
 .width-80 {
    width: 80%;
+}
+.fs-10 {
+   font-size: 10px;
+   margin-top: 5px;
+   color: #535665;
 }
 .fs-12 {
    font-size: 12px;
@@ -171,11 +351,13 @@
 }
 .mg-top-20 {
    margin-top: 20px;
-   display: flex;
-   align-items: center;
 }
 .mg-top-10 {
    margin-top: 10px;
+   display: flex;
+   align-items: center;
+}
+.flex {
    display: flex;
    align-items: center;
 }
