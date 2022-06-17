@@ -13,15 +13,68 @@ document.querySelector(".more-text").addEventListener("click", (event) => {
    }
 });
 
-// Qty Modal
-function QtyModal() {
-   document.querySelector("#qtymodal").style.display = "block";
-}
+// let coupons = { MASAI100: -100, MYNTRA10: "*0.9", MYNTRA20: "*0.8", MYNTRA30: "*0.7" };
+// localStorage.setItem("coupons", JSON.stringify(coupons));
 
-//Size Modal
-function sizeModal() {
-   document.querySelector("#sizemodal").style.display = "block";
-}
+let size, qty, currentElementIndex;
+
+//getting Cart Items data for localstorage
+let cartItemData = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+//upate qty on change
+let qtyItemdata = document.querySelectorAll(".dialogs-qtyitem");
+qtyItemdata.forEach((element) => {
+   element.addEventListener("click", (event) => {
+      qty = +event.target.innerText;
+   });
+});
+
+//update quantity in localstorage and array on submit
+document.querySelector(".dialogs-qtybutton").addEventListener("click", () => {
+   cartItemData[currentElementIndex].qty = qty;
+   localStorage.setItem("cartItems", JSON.stringify(cartItemData));
+   document.querySelector("#qtymodal").style.display = "none";
+   displayItems(cartItemData);
+});
+
+//upate size on change
+let sizeItemdata = document.querySelectorAll(".dialogs-sizeitem");
+sizeItemdata.forEach((element) => {
+   element.addEventListener("click", (event) => {
+      size = event.target.innerText;
+   });
+});
+
+//update size in localstorage and array on submit
+document.querySelector(".dialogs-sizebutton").addEventListener("click", () => {
+   cartItemData[currentElementIndex].size = size;
+   localStorage.setItem("cartItems", JSON.stringify(cartItemData));
+   document.querySelector("#sizemodal").style.display = "none";
+   displayItems(cartItemData);
+});
+
+// Apply Coupon code
+document.querySelector(".coupons-applyButton").addEventListener("click", () => {
+   let allcoupons = JSON.parse(localStorage.getItem("coupons") || []);
+   let couponCode = document.querySelector(".coupons-textInput").value;
+   let temp = 0;
+   let flag = false;
+   for (let k in allcoupons) {
+      if (couponCode.toUpperCase() == k) {
+         totalAmt = eval(actualAmt + allcoupons[k]).toFixed(2);
+         document.querySelector(".coupons-label").innerText = k;
+         document.querySelector(".coupons-label").style.color = "#03a685";
+         flag = true;
+         break;
+      }
+   }
+
+   if (!flag) alert("Wrong Coupon Code");
+   else {
+      updatePriceblock();
+      document.querySelector("#couponsmodal").style.display = "none";
+   }
+});
 
 //Covid 19 modal
 let covidKnowMoreTag = document.querySelector(".donationStrip-KnowMore");
@@ -79,6 +132,8 @@ let donPill = document.querySelectorAll(".pillView-pill");
 donPill.forEach((el) => {
    el.addEventListener("click", (event) => {
       covidDon = +event.target.getAttribute("data-key");
+      updatePriceblock();
+
       document
          .querySelector(".donationStrip-icon > path")
          .setAttribute(
@@ -96,6 +151,7 @@ document.querySelector(".donationStrip-input").addEventListener("change", (event
          "d",
          "M11.83 6.11l-4.751 4.583a.604.604 0 0 1-.425.164h-.003a.608.608 0 0 1-.424-.16L4.176 8.74a.55.55 0 0 1 0-.805.62.62 0 0 1 .846 0l1.57 1.506c.03.028.078.027.107-.001l4.274-4.124a.62.62 0 0 1 .847-.01c.236.22.24.58.01.805M14.285 0H1.714C.77 0 0 .77 0 1.714v12.572C0 15.23.77 16 1.714 16h12.572C15.23 16 16 15.23 16 14.286V1.714C16 .77 15.23 0 14.286 0"
       );
+   updatePriceblock();
 });
 
 document.querySelector(".donationStrip-icon").addEventListener("click", (event) => {
@@ -120,19 +176,28 @@ document.querySelector(".donationStrip-icon").addEventListener("click", (event) 
          );
       covidDon = 0;
    }
+   updatePriceblock();
 });
 
 //itemContainer-item display
+let actualAmt = 0;
+let totalAmt = 0;
+let orignalAmt = 0;
+let orderAmt = 0;
+displayItems(cartItemData);
 
-let cartItemData = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-displayItems();
-
-function displayItems() {
+function displayItems(cartItemData) {
+   actualAmt = 0;
+   totalAmt = 0;
+   orignalAmt = 0;
    let itemContainer = document.querySelector(".itemContainer");
    itemContainer.innerText = "";
 
    cartItemData.forEach((el, ind) => {
+      actualAmt += el.qty * el.variant_price;
+      totalAmt += el.qty * el.variant_price;
+      orignalAmt += el.qty * el.variant_compare_at_price;
+
       let Item = document.createElement("div");
       Item.setAttribute("class", "itemContainer-item");
       let ItemLeft = document.createElement("div");
@@ -161,13 +226,15 @@ function displayItems() {
       itemSize.innerText = "Size: " + el.size;
       itemSize.setAttribute("class", "item-size");
       itemSize.addEventListener("click", () => {
-         sizeModal(ind);
+         document.querySelector("#sizemodal").style.display = "block";
+         currentElementIndex = ind;
       });
       let itemQty = document.createElement("div");
       itemQty.innerText = "Qty: " + el.qty;
       itemQty.setAttribute("class", "item-qty");
       itemQty.addEventListener("click", () => {
-         QtyModal(ind);
+         document.querySelector("#qtymodal").style.display = "block";
+         currentElementIndex = ind;
       });
       itemSizeQtyContainer.append(itemSize, itemQty);
 
@@ -211,11 +278,36 @@ function displayItems() {
 
       itemContainer.append(Item);
    });
+   console.log(actualAmt, totalAmt, orignalAmt);
+   updatePriceblock();
 }
 
+//update priceBlock-container
+function updatePriceblock() {
+   let orderSummary = document.querySelector("priceBreakUp-orderSummary");
+   document.querySelector(".actual-price").innerText = "₹" + orignalAmt;
+   document.querySelector(".discount-price").innerText = "-₹" + (orignalAmt - actualAmt);
+   let couponAmt = actualAmt - totalAmt;
+   if (couponAmt !== 0) {
+      document.querySelector(".applyCoupon").parentNode.style.display = "flex";
+      document.querySelector(".applyCoupon").innerText = "-₹" + couponAmt.toFixed(2);
+   } else {
+      document.querySelector(".applyCoupon").parentNode.style.display = "none";
+   }
+
+   if (covidDon !== 0) {
+      document.querySelector(".donation-price").parentNode.style.display = "flex";
+      document.querySelector(".donation-price").innerText = "₹" + covidDon;
+   } else {
+      document.querySelector(".donation-price").parentNode.style.display = "none";
+   }
+   let orderAmt = Number(+totalAmt + +covidDon).toFixed(2);
+   console.log(totalAmt, orderAmt);
+   document.querySelector(".priceDetail-total").innerText = "₹" + (+orderAmt + 99);
+}
 //Delete Item from Cart
 function deleteItem(ind) {
    cartItemData.splice(ind, 1);
    localStorage.setItem("cartItems", JSON.stringify(cartItemData));
-   displayItems();
+   displayItems(cartItemData);
 }
