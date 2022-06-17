@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+           display: grid;
+           grid-template-columns:repeat(1,30%);
+           grid-template-rows:300px 500px;
+           justify-content: center;
+           background-color: antiquewhite;
+        
+
+        }
+        #main>div{
+        
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+         background-color: white;
+        
+         
+        }
+        #main>div:nth-child(1){
+            margin-top: 20px;
+        }
+        #main>div:nth-child(2){
+            margin-bottom: 20px;
+        }
+       
+        
+        
+        p{
+            font-size: 20px;
+        }
+        #main2>h1{
+            margin-top: 30px;
+        
+        }
+        #mbl{
+            padding: 10px 180px 10px 20px;
+        
+        }
+        
+        
+        
+        img{
+            width: 500px;
+            height:280px;
+            margin: auto;
+        }
+       
+        #mbl{
+        
+            padding:10px 175px 10px 0px ;
+            margin-left: 30px;
+           
+        }
+        h1{
+            margin-left: 30px;
+        }
+        p{
+           font-size: 25px;
+           margin-left: 30px;
+           margin-top: 90px;
+        }
+       input{
+        margin: 10px;
+        height: 35px;
+        width: 65px;
+        border-radius: 5px;
+        text-align: center;
+        font-size:30px;
+
+       }
+       button{
+        display: flex;
+        margin: auto;
+        padding: 20px 190px 20px 170px;
+        margin-top: 40px;
+        background-color: red;
+        border: 1px solid red;
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 20px;
+       }
+       #main1{
+        margin-top: 60px;
+        margin-left: 30px;
+       }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+      <div >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TUFQhcdK3dOJxT3M9L40HSsjuSajkkYeQg&usqp=CAU" alt="error">
+      </div>
+      <div id="main2">
+        <h1>Verify with OTP</h1> 
+        <P> OTP Sent to your mobile number</P>
+        <div id="main1">
+            <input type="text" id="ist" maxlength="1"onkeyup="clickEvent(this,'sec')" >
+            <input type="text"id="sec" maxlength="1"onkeyup="clickEvent(this,'third')">
+            <input type="text"id="third" maxlength="1"onkeyup="clickEvent(this,'fourth')">
+            <input type="text"id="fourth" maxlength="1">
+           
+        </div>
+        <button>CONFIRM</button>
+
+       
+      </div>
+    </div>
+   
+</body>
+</html>
+<script>
+    function clickEvent(first,last){
+        if(first.value.length==1){
+            document.getElementById(last).focus()
+        }
+    }
+
+    document.querySelector("button").addEventListener("click",otp)
+    verify=JSON.parse(localStorage.getItem("loginorsignupdata"))||[]
+    function otp(){
+        window.location.href="homepage.html"
+    }
+</script>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #main{
+           display: grid;
+           grid-template-columns:repeat(1,30%);
+           grid-template-rows:600px;
+           justify-content: center;
+    
+           margin-top: 100px;
+    
+        
+
+        }
+        #main>div{
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+         background-color: white;
+         margin-top: 30px;
+         margin-bottom: 30px;
+        
+         
+        }
+        #password{
+            padding: 20px 180px 20px 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+       
+        #email{
+            padding: 20px 180px 20px 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+       
+        button{
+            display: flex;
+            justify-content: center;
+            padding: 20px 150px 20px 150px;
+            margin: auto;
+            margin-top: 30px;
+            background-color: red;
+            color: white;
+            border: 1px solid red;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 60px;
+            border-radius: 20px;
+
+
+        }
+        h1{
+            text-align: center;
+        }
+       
+           
+          
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div>
+            <h1>Login page</h1>
+
+            <input id="password"type="text" placeholder="Enter Password"><br/>
+            <input type="text" id="email" placeholder="Email"><br/>
+            <button>Login</button><br/>
+        </div>
+    
+     
+    </div>
+</body>
+</html>
+<script>
+    loginpagedata=JSON.parse(localStorage.getItem("loginorsignupdata"))||[]
+    document.querySelector("button").addEventListener("click",login)
+    
+    function login(){
+        logindata={
+            givenpassword:document.querySelector("#password").value,
+            givenemail:document.querySelector("#email").value,
+        }
+        loginpagedata.push(logindata)
+        if(checklogin(logindata.givenemail,logindata.givenpassword)==true){
+            localStorage.setItem("loginmembers",JSON.stringify(logindata))
+            localStorage.setItem("name",loginorsignupdata.NAME)
+         alert("WELCOME TO MYNTRA")
+        }else{
+            alert("credentials are wrong")
+        }
+        
+             
+            
+        
+
+        function checklogin(givenemail,givenpassword){
+            filtered=loginpagedata.filter(function(ele){
+                return ele.EMAIL==givenemail && ele.PASSWORD==givenpassword
+                
+
+            })
+            if(filtered.length>0){
+                return true
+            }else{
+                return false
+            }
+        }
+        
+    }
+
+    
+</script>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra</title>
+    <style>
+        #main{
+           display: grid;
+           grid-template-columns:repeat(1,30%);
+           grid-template-rows:200px 550px;
+           justify-content: center;
+           background-color: antiquewhite;
+           padding: 20px;
+           border-radius: 20px;
+        
+
+        }
+        #main>div{
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+         background-color: white;
+        
+         
+        }
+        #main>div:nth-child(1){
+            margin-top: 20px;
+        }
+        #main>div:nth-child(2){
+            margin-bottom: 20px;
+        }
+       
+        
+        
+        p{
+            font-size: 20px;
+        }
+        #main2>h1{
+            margin-top: 30px;
+        
+        }
+       
+        button{
+            margin: auto;
+            padding:20px 150px 20px 170px ;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 110px;
+            border: 1px solid red;
+            cursor: pointer;
+            border-radius: 20px;
+            
+        
+        }
+        img{
+            width: 493px;
+            height:178px;
+        }
+       
+        #mbl{
+        
+            padding:15px 175px 15px 0px ;
+            margin-left: 30px;
+            display: block;
+            width: 80%;
+            height: 40px;
+            padding: 10px 0;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #3e4152;
+            background-color: #fff;
+            background-image: none;
+            border:0.5px solid black;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 20px;
+           
+        }
+        h1{
+            margin-left: 30px;
+        }
+        p{
+            width: 400px;
+            height: 20px;
+            margin-left: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        label{
+            font-size: 25px;
+            margin-left: 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+      <div >
+        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2022/6/9/ab7ff44f-8d4d-4fe4-a747-611212c6ce911654797498491-Frame-83.jpg" alt="error">z
+      </div>
+      <div id="main2">
+        <h1>Login or Signup</h1> <br/>
+        <label>Enter Your Mobilenumber</label><br/>
+        <input id="mbl" type="text" maxlength="10"  placeholder="+91 | Mobile Number"><br/>
+
+        <p>By continuing, I agree to the<a href="https://www.myntra.com/termsofuse"> Terms of Use</a><a href="https://www.myntra.com/privacypolicy">& Privacy Policy</a> </p>
+        <button>CONTINUE</button><br/>
+    
+      </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click",signup)
+    signuparr=JSON.parse(localStorage.getItem("loginorsignupdata"))||[]
+    console.log(signuparr)
+    function signup(){
+        userdata={
+            mobilenumber:document.querySelector("#mbl").value,
+        }
+        if(checkmobile(userdata.mobilenumber)){
+            localStorage.setItem("loginorsignupdata",JSON.stringify(signuparr))
+             alert("sign up success")
+             window.location.href="verify with otp.html"
+        }else{
+            window.location.href="verify withotp1.html"
+        }
+       
+
+       
+    }
+    function checkmobile(MOBILE){
+            filtered=signuparr.filter(function(elem){
+                return MOBILE==elem.MOBILE
+            })
+            if(filtered.length>0){
+                return false
+            }else{
+                return true
+            }
+        }
+</script>

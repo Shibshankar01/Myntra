@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+           display: grid;
+           grid-template-columns:repeat(1,30%);
+           grid-template-rows:800px;
+           justify-content: center;
+           background-color: antiquewhite;
+          
+        
+
+        }
+        #main>div{
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+         background-color: white;
+         margin-top: 30px;
+         margin-bottom: 20px;
+         border-radius: 20px;
+        
+         
+        }
+        #Password{
+            padding: 20px 180px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+        #name{
+            padding: 20px 180px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+        #Email{
+            padding: 20px 180px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+       
+        #mbl{
+            padding: 20px 180px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            padding: 20px 100px 20px 100px;
+            margin: auto;
+            margin-top: 50px;
+            background-color: red;
+            color: white;
+            border: 1px solid red;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+
+
+        }
+        h1{
+            text-align: center;
+        }
+       p{
+        text-align: center;
+       }
+       #gen{
+        display: flex;
+        margin-left: 20px;
+        padding: 20px 40px 20px 40px;
+        margin-top: 20px;
+        font-size: 20px;
+
+       }
+       input{
+        font-size: 20px;
+        border-radius: 20px;
+       }
+        
+           
+          
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div>
+            <h1>
+                Complete your sign up</h1>
+            
+
+            <input id="Password"type="text" placeholder="Create Password"><br/>
+            <input type="text" id="name" placeholder="Full Name"><br/>
+            <input type="text" id="Email" placeholder="Email(Optional)"><br/>
+            <input type="text" id="mbl" placeholder="Enter Mobilenumber"><br/>
+            <select id="gen">
+                <option value="">Selectgender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <button>Create an Account</button><br/>
+        </div>
+    
+     
+    </div>
+</body>
+</html>
+<script>
+    completesignup=JSON.parse(localStorage.getItem("loginorsignupdata"))||[]
+       document.querySelector("button").addEventListener("click",complete)
+    function complete(){
+       data={
+        PASSWORD:document.querySelector("#Password").value,
+        NAME:document.querySelector("#name").value,
+        GENDER:document.querySelector("#gen").value,
+        EMAIL:document.querySelector("#Email").value,
+        MOBILE:document.querySelector("#mbl").value,
+    
+       }
+       completesignup.push(data)
+       localStorage.setItem("loginorsignupdata",JSON.stringify(completesignup))
+       window.location.href="loginpage.html"
+    }
+</script>
