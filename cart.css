@@ -569,7 +569,26 @@
    letter-spacing: 3px;
    text-transform: uppercase;
 }
-
+.bagfootercontainer {
+   margin-top: 50px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 30px;
+   position: relative;
+   bottom: 10px;
+}
+.bagfooter-images {
+   width: 80%;
+}
+.bagfooter-images > img {
+   width: 6%;
+}
+.bagfooter-help {
+   width: 15%;
+   font-size: 14px;
+   font-weight: 500;
+}
 /* Quick Styling CSS */
 
 .btn-111 {
