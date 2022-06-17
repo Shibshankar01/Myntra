@@ -16,7 +16,10 @@ document.querySelector(".more-text").addEventListener("click", (event) => {
 // let coupons = { MASAI100: -100, MYNTRA10: "*0.9", MYNTRA20: "*0.8", MYNTRA30: "*0.7" };
 // localStorage.setItem("coupons", JSON.stringify(coupons));
 
-let size, qty, currentElementIndex;
+let size,
+   qty,
+   currentElementIndex,
+   couponAmt = 0;
 
 //getting Cart Items data for localstorage
 let cartItemData = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -64,6 +67,7 @@ document.querySelector(".coupons-applyButton").addEventListener("click", () => {
          totalAmt = eval(actualAmt + allcoupons[k]).toFixed(2);
          document.querySelector(".coupons-label").innerText = k;
          document.querySelector(".coupons-label").style.color = "#03a685";
+         couponAmt = actualAmt - totalAmt;
          flag = true;
          break;
       }
@@ -184,6 +188,7 @@ let actualAmt = 0;
 let totalAmt = 0;
 let orignalAmt = 0;
 let orderAmt = 0;
+
 displayItems(cartItemData);
 
 function displayItems(cartItemData) {
@@ -287,7 +292,7 @@ function updatePriceblock() {
    let orderSummary = document.querySelector("priceBreakUp-orderSummary");
    document.querySelector(".actual-price").innerText = "₹" + orignalAmt;
    document.querySelector(".discount-price").innerText = "-₹" + (orignalAmt - actualAmt);
-   let couponAmt = actualAmt - totalAmt;
+
    if (couponAmt !== 0) {
       document.querySelector(".applyCoupon").parentNode.style.display = "flex";
       document.querySelector(".applyCoupon").innerText = "-₹" + couponAmt.toFixed(2);
@@ -301,7 +306,7 @@ function updatePriceblock() {
    } else {
       document.querySelector(".donation-price").parentNode.style.display = "none";
    }
-   let orderAmt = Number(+totalAmt + +covidDon).toFixed(2);
+   orderAmt = Number((+totalAmt + +covidDon).toFixed(2));
    console.log(totalAmt, orderAmt);
    document.querySelector(".priceDetail-total").innerText = "₹" + (+orderAmt + 99);
 }
@@ -311,3 +316,23 @@ function deleteItem(ind) {
    localStorage.setItem("cartItems", JSON.stringify(cartItemData));
    displayItems(cartItemData);
 }
+
+//place order functionality
+
+document.querySelector(".order-btn").addEventListener("click", () => {
+   let orderData = {
+      user_name: "Sanjay",
+      user_id: "8237202186",
+      original_amt: orignalAmt,
+      actual_amt: actualAmt,
+      coupon_amt: couponAmt,
+      coviddon_amt: covidDon,
+      convenience_amt: 99,
+      order_amt: orderAmt,
+   };
+   let allOrderData = JSON.parse(localStorage.getItem("orderData")) || [];
+   allOrderData.push(orderData);
+
+   localStorage.setItem("orderData", JSON.stringify(allOrderData));
+   window.location.href = "address.html";
+});
