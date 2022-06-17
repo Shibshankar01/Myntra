@@ -1,11 +1,18 @@
 let productData = JSON.parse(localStorage.getItem("allProducts")) || [];
-localStorage.setItem("clickedOn", "Women");
+localStorage.setItem("clickedOn", "Kids");
 
 let clickedOn = localStorage.getItem("clickedOn")||"";
+let filteredData = [];
+if(clickedOn=="Kids"){
+   filteredData = productData.filter(function(elem){
+      return elem.ideal_for=="Boys" || elem.ideal_for=="Girls"
+   })
+}else{
+   filteredData = productData.filter(function(elem){
+      return elem.ideal_for==clickedOn;
+   })
+}
 
-let filteredData = productData.filter(function(elem){
-   return elem.ideal_for==clickedOn;
-})
 
 let firstHeadingSpan = document.querySelector("#first-heading>span:nth-child(2)");
 let span = document.createElement("span");
@@ -67,7 +74,6 @@ function displayProducts(productList) {
       }
       div.addEventListener("mouseout", function () {
          img.src = imageArr[0];
-         console.log(div);
       })
       document.querySelector("#container").append(div);
     }
