@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 #navbar {
@@ -24,7 +25,7 @@ body {
 }
 
 #left {
-    width: 650px;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -162,7 +163,6 @@ body {
 #kids .categories h3 {
     color: rgb(255, 123, 0);
 }
-
 #homeLiving:hover #subMenu {
     display: block;
     position: absolute;
@@ -240,10 +240,11 @@ sup {
 
 
 #right {
-    width: 550px;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #right>div:first-child {
@@ -261,7 +262,7 @@ sup {
 }
 
 #right input {
-    width: 250px;
+    width: 80%;
     border: none;
     outline: none;
     padding: 5px;
@@ -346,12 +347,99 @@ sup {
     padding: 9px 19px;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 1300px) {
+   
+    #homeLiving {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 600px;
+        overflow: scroll;
+    }
+}
+  /* Medium Screen */
+@media only screen and (min-width: 320px) and (max-width: 1000px) {
+    #left {
+        width: 40%;
+        margin: 0px 10px;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    #right {
+        width: 60%;
+    }
+    
+    #subMenu > ul{
+        width: 500px;
+        overflow: scroll;
+    }
+    
+  }
+
+
+  /* Small Screen */
+  @media only screen and (min-width: 320px) and (max-width: 699px) {
+    #left {
+        width: 40%;
+        margin: 0px 10px;
+    }
+    #kids {
+        display: none;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    .rightSideIcons {
+        display: none;
+    }
+    #right {
+        width: 40%;
+    }
+
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 500px) {
+   
+    #left {
+        width: 100%;
+    }
+    #kids {
+        display: none;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    #right {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 300px;
+        overflow: scroll;
+    }
+}
 
 
 
-
-
-#homepage {
+/* #homepage {
     height: 1000px;
     background-color: #f0f0f0;
-}
+} */
