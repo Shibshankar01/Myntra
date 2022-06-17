@@ -1,4 +1,5 @@
 // toggle with offer show more
+
 document.querySelector(".more-text").addEventListener("click", (event) => {
    let moreText = document.querySelector(".more-text");
    let offerHide = document.querySelector(".offer-hide");
@@ -13,20 +14,14 @@ document.querySelector(".more-text").addEventListener("click", (event) => {
 });
 
 // Qty Modal
-let qtyTag = document.querySelector(".item-qty");
-let qtyModal = document.querySelector("#qtymodal");
-
-qtyTag.addEventListener("click", () => {
-   qtyModal.style.display = "block";
-});
+function QtyModal() {
+   document.querySelector("#qtymodal").style.display = "block";
+}
 
 //Size Modal
-let sizeTag = document.querySelector(".item-size");
-let sizeModal = document.querySelector("#sizemodal");
-
-sizeTag.addEventListener("click", () => {
-   sizeModal.style.display = "block";
-});
+function sizeModal() {
+   document.querySelector("#sizemodal").style.display = "block";
+}
 
 //Covid 19 modal
 let covidKnowMoreTag = document.querySelector(".donationStrip-KnowMore");
@@ -45,13 +40,14 @@ couponsApplyTag.addEventListener("click", () => {
 });
 
 //modal closing
+
 let closeModal = document.querySelectorAll(".modal-cancelIcon");
 closeModal.forEach((el) => {
    el.addEventListener("click", (event) => {
       if (event.target.parentNode.parentNode.id == "qtymodal") {
-         qtyModal.style.display = "none";
+         document.querySelector("#qtymodal").style.display = "none";
       } else if (event.target.parentNode.parentNode.id == "sizemodal") {
-         sizeModal.style.display = "none";
+         document.querySelector("#sizemodal").style.display = "none";
       } else if (event.target.parentNode.parentNode.id == "knoworemodal") {
          covidKnowMoreModel.style.display = "none";
       } else if (event.target.parentNode.parentNode.id == "couponsmodal") {
@@ -62,10 +58,10 @@ closeModal.forEach((el) => {
 
 window.addEventListener("click", (event) => {
    if (event.target.id == "qtymodal") {
-      qtyModal.style.display = "none";
+      document.querySelector("#qtymodal").style.display = "none";
    }
    if (event.target.id == "sizemodal") {
-      sizeModal.style.display = "none";
+      document.querySelector("#sizemodal").style.display = "none";
    }
    if (event.target.id == "knoworemodal") {
       covidKnowMoreModel.style.display = "none";
@@ -126,13 +122,13 @@ document.querySelector(".donationStrip-icon").addEventListener("click", (event) 
    }
 });
 
-//itemContainer-item
+//itemContainer-item display
+
+let cartItemData = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 displayItems();
 
 function displayItems() {
-   let cartItemData = JSON.parse(localStorage.getItem("cartItems")) || [];
-
    let itemContainer = document.querySelector(".itemContainer");
    itemContainer.innerText = "";
 
@@ -164,9 +160,15 @@ function displayItems() {
       let itemSize = document.createElement("div");
       itemSize.innerText = "Size: " + el.size;
       itemSize.setAttribute("class", "item-size");
+      itemSize.addEventListener("click", () => {
+         sizeModal(ind);
+      });
       let itemQty = document.createElement("div");
       itemQty.innerText = "Qty: " + el.qty;
       itemQty.setAttribute("class", "item-qty");
+      itemQty.addEventListener("click", () => {
+         QtyModal(ind);
+      });
       itemSizeQtyContainer.append(itemSize, itemQty);
 
       let itemPriceContainer = document.createElement("div");
@@ -190,15 +192,30 @@ function displayItems() {
       let deliveryText = document.createElement("span");
       deliveryText.innerText = "Delivery By";
       let deliveryDate = document.createElement("strong");
-
       let today = new Date();
-
       deliveryDate.innerText = +(today.getDate() + 3) + " " + today.toString().substring(4, 7) + " " + today.getFullYear();
       deliveryContainer.append(deliveryIcon, deliveryText, deliveryDate);
-
       ItemRight.append(itemBrand, itemTitle, itemSeller, itemSizeQtyContainer, itemPriceContainer, deliveryContainer);
-      Item.append(ItemLeft, ItemRight);
+
+      let closeIcon = document.createElement("div");
+      closeIcon.setAttribute("class", "itemContainer-closeIcon");
+      closeIcon.innerHTML = `<svg  width="16" height="16" class="item-closeIcon">
+      <path
+         d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+      ></path>
+   </svg>`;
+      closeIcon.addEventListener("click", () => {
+         deleteItem(ind);
+      });
+      Item.append(ItemLeft, ItemRight, closeIcon);
 
       itemContainer.append(Item);
    });
+}
+
+//Delete Item from Cart
+function deleteItem(ind) {
+   cartItemData.splice(ind, 1);
+   localStorage.setItem("cartItems", JSON.stringify(cartItemData));
+   displayItems();
 }

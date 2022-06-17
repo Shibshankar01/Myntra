@@ -63,9 +63,11 @@ btns.forEach((el) => {
 
 //action for Add to button click
 document.querySelector(".addtobag").addEventListener("click", () => {
+   let goToBagBtn = document.querySelector(".addtobag");
+
    if (size == "") alert("Select Size");
    else if (pinCode == "") alert("Enter Pincode to check availibility & delivery time");
-   else {
+   else if (goToBagBtn.innerText === "ADD TO BAG") {
       let singleItemData = JSON.parse(localStorage.getItem("singleItemView"));
       let cartItem = JSON.parse(localStorage.getItem("cartItems")) || [];
       singleItemData["qty"] = 1;
@@ -73,8 +75,6 @@ document.querySelector(".addtobag").addEventListener("click", () => {
       singleItemData["pincode"] = pinCode;
       cartItem.push(singleItemData);
 
-      let goToBagBtn = document.querySelector(".addtobag");
-      // goToBagBtn.setAttribute("disabled", "true");
       goToBagBtn.innerText = "GO TO BAG";
       goToBagBtn.addEventListener("click", () => {
          window.location.href = "bag.html";
