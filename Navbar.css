@@ -402,11 +402,15 @@ sup {
     #studio {
         display: none;
     }
-    .rightSideIcons {
-        display: none;
-    }
     #right {
         width: 40%;
+    }
+    #right > div {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 400px;
+        overflow: scroll;
     }
 
   }
@@ -430,6 +434,10 @@ sup {
     }
     #right {
         display: none;
+    }
+    #subMenu > ul{
+        width: 300px;
+        overflow: scroll;
     }
     #subMenu > ul{
         width: 300px;
