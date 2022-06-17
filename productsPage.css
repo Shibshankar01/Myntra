@@ -102,3 +102,60 @@
     color: #878b94;
     font-size: 16px;
 }
+#leftTab{
+    height: 200px;
+    border: 1px solid red;
+}
+@media all and (min-width: 800px) and (max-width: 1024px){
+    #container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-evenly;
+    }
+    #sort{
+        height: 38px;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 799px) {
+    #container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+    }
+    #container>div{
+        width: 90%;
+    }
+    #sort{
+        height: 38px;
+    }
+}
+@media all and (min-width: 553px) and (max-width: 599px){
+    #container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    #container>div{
+        width: 70%;
+    }
+    #sort{
+        height: 38px;
+    }
+}
+@media all and (min-width: 350px) and (max-width: 552px) {
+    #mainContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    #container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    #container>div{
+        width: 70%;
+    }
+    #sort{
+        height: 38px;
+    }
+}

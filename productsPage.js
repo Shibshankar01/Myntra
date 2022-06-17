@@ -1,5 +1,5 @@
 let productData = JSON.parse(localStorage.getItem("allProducts")) || [];
-localStorage.setItem("clickedOn", "Men");
+localStorage.setItem("clickedOn", "Women");
 
 let clickedOn = localStorage.getItem("clickedOn")||"";
 
@@ -53,6 +53,22 @@ function displayProducts(productList) {
          increment(productList[i].ID);
          singleItemView(productList[i]);
       });
+      div.addEventListener("mouseenter", changeImage);
+      function changeImage(){
+            let i=0;
+            setInterval(function(){
+               if(i>=imageArr.length-1){
+                  i=0;
+               }else{
+                  i++;
+               }
+               img.src = imageArr[i];
+            }, 2000);
+      }
+      div.addEventListener("mouseout", function () {
+         img.src = imageArr[0];
+         console.log(div);
+      })
       document.querySelector("#container").append(div);
     }
     localStorage.setItem("filteredProducts", JSON.stringify(productList));
@@ -62,6 +78,7 @@ function increment(id) {
    for(let i=0; i<productData.length; i++){
       if(productData[i].ID == id){
          productData[i].counter++;
+         break;
       }
    }
    localStorage.setItem("allProducts", JSON.stringify(productData));
