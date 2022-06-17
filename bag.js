@@ -13,8 +13,8 @@ document.querySelector(".more-text").addEventListener("click", (event) => {
    }
 });
 
-// let coupons = { MASAI100: -100, MYNTRA10: "*0.9", MYNTRA20: "*0.8", MYNTRA30: "*0.7" };
-// localStorage.setItem("coupons", JSON.stringify(coupons));
+let coupons = { MASAI100: -100, MYNTRA10: "*0.9", MYNTRA20: "*0.8", MYNTRA30: "*0.7" };
+localStorage.setItem("coupons", JSON.stringify(coupons));
 
 let size,
    qty,
@@ -58,7 +58,7 @@ document.querySelector(".dialogs-sizebutton").addEventListener("click", () => {
 
 // Apply Coupon code
 document.querySelector(".coupons-applyButton").addEventListener("click", () => {
-   let allcoupons = JSON.parse(localStorage.getItem("coupons") || []);
+   let allcoupons = JSON.parse(localStorage.getItem("coupons")) || [];
    let couponCode = document.querySelector(".coupons-textInput").value;
    let temp = 0;
    let flag = false;
