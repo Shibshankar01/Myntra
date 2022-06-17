@@ -293,11 +293,18 @@
    width: 100%;
    height: 100%;
 }
+.itemContainer-itemRight {
+   width: 70%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
 .itemContainer-title {
    width: 90%;
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
+   font-size: 12px;
 }
 .sizeQtyContainer {
    display: flex;
@@ -317,12 +324,6 @@
    font-size: 14px;
    line-height: 16px;
 }
-.itemContainer-itemRight {
-   width: 70%;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-}
 .itemContainer-soldby {
    font-size: 12px;
    white-space: nowrap;
@@ -332,11 +333,22 @@
    color: #7b7d83;
 }
 
-.item-price {
+.itemPriceContainer {
    display: flex;
-   /* margin-top: 15px; */
+   font-size: 17px;
+   margin-top: 10px;
 }
 
+.og-price {
+   color: #1a286e;
+   text-decoration: line-through;
+}
+.deliveryContainer {
+   margin-top: 10px;
+   font-size: 12px;
+   display: flex;
+   align-items: center;
+}
 /* Right Block styling */
 
 .block > .right-block {
@@ -518,6 +530,35 @@
    margin-right: 12px;
    font-weight: 600;
 }
+
+.knowMore-list {
+   background: #f4f4f5;
+   padding: 12px;
+   font-weight: 300;
+   padding-left: 20px;
+}
+
+.knowMore-text {
+   font-size: 12px;
+   margin-bottom: 8px;
+}
+
+.coupons-textInput {
+   box-sizing: border-box;
+   height: 40px;
+   font-size: 14px;
+   border-radius: 4px;
+   margin-bottom: 4px;
+   outline: none;
+   width: 100%;
+   font-size: 20px;
+   border: none;
+   border: 1px solid #d5d6d9;
+   padding: 7px 14px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+}
+
 /* Quick Styling CSS */
 
 .btn-111 {
@@ -601,7 +642,6 @@
 }
 .strikethrough {
    text-decoration: line-through;
-   font-size: 16px;
 }
 .orange-1 {
    color: #ff905a;
