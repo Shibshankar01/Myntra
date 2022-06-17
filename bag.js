@@ -283,7 +283,7 @@ function displayItems(cartItemData) {
 
       itemContainer.append(Item);
    });
-   console.log(actualAmt, totalAmt, orignalAmt);
+   // console.log(actualAmt, totalAmt, orignalAmt);
    updatePriceblock();
 }
 
@@ -307,7 +307,6 @@ function updatePriceblock() {
       document.querySelector(".donation-price").parentNode.style.display = "none";
    }
    orderAmt = Number((+totalAmt + +covidDon).toFixed(2));
-   console.log(totalAmt, orderAmt);
    document.querySelector(".priceDetail-total").innerText = "₹" + (+orderAmt + 99);
 }
 //Delete Item from Cart
