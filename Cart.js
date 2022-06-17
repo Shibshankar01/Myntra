@@ -72,7 +72,13 @@ document.querySelector(".addtobag").addEventListener("click", () => {
       singleItemData["size"] = size;
       singleItemData["pincode"] = pinCode;
       cartItem.push(singleItemData);
-      document.querySelector(".addtobag").setAttribute("disabled", "true");
+
+      let goToBagBtn = document.querySelector(".addtobag");
+      // goToBagBtn.setAttribute("disabled", "true");
+      goToBagBtn.innerText = "GO TO BAG";
+      goToBagBtn.addEventListener("click", () => {
+         window.location.href = "bag.html";
+      });
       localStorage.setItem("cartItems", JSON.stringify(cartItem));
    }
 });
@@ -92,5 +98,4 @@ document.querySelector("#checkPin").addEventListener("click", () => {
       pinInput.value = "";
       pinInput.removeAttribute("disabled");
    }
-   console.log(pinCode);
 });
