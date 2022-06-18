@@ -172,7 +172,7 @@
 }
 
 /* Styles for Bag Page */
-.navbar-header {
+.header {
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -181,15 +181,15 @@
    letter-spacing: 2px;
    font-weight: 600;
 }
-.navbar-secureContainer,
-.navbar-logo {
+.header > .secureContainer,
+.logo {
    width: 25%;
    display: flex;
    justify-content: center;
    align-items: center;
    font-size: 12px;
 }
-.navbar-checkout-steps {
+.header > .checkout-steps {
    width: 40%;
    display: flex;
    justify-content: center;
@@ -211,13 +211,22 @@
    display: flex;
    max-width: 900px;
    margin: auto;
+   justify-content: space-between;
+   margin-right: 100px;
 }
 
 .block > .left-block {
    width: 60%;
    padding-right: 15px;
-   border-right: 1px solid #eaeaec;
-   padding-top: 25px;
+   padding-top: 40px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+.block > .right-block {
+   width: 40%;
+   margin-left: 100px;
+   padding-top: 15px;
    display: flex;
    flex-direction: column;
    gap: 8px;
@@ -247,11 +256,6 @@
    border-radius: 4px;
    border: 1px solid #eaeaec;
 }
-.offer-title {
-   font-weight: 700;
-   font-size: 12px;
-   color: #535766;
-}
 .offer-items > li {
    font-size: 13px;
    color: #282c3f;
@@ -259,9 +263,6 @@
 }
 .offer-hide {
    display: none;
-   font-size: 13px;
-   color: #282c3f;
-   margin-left: 6%;
 }
 
 .more-text {
@@ -269,7 +270,6 @@
    color: #ff3f6c;
    font-size: 14px;
    cursor: pointer;
-   font-weight: 600;
 }
 .itemContainer-item {
    padding: 8px;
@@ -292,63 +292,29 @@
    width: 100%;
    height: 100%;
 }
+.itemContainer-title {
+   width: 90%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+.sizeQtyContainer {
+   display: flex;
+   margin: 8px 0px;
+}
 .itemContainer-itemRight {
    width: 70%;
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
 }
-.itemContainer-title {
-   width: 90%;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   font-size: 12px;
-}
-.sizeQtyContainer {
+.item-price {
    display: flex;
-   margin: 8px 0px;
-}
-.item-qty,
-.item-size {
-   display: inline-block;
-   white-space: nowrap;
-   padding: 2px 8px;
-   background: #f5f5f6;
-   color: #282c3f;
-   font-weight: 600;
-   cursor: pointer;
-   margin-right: 12px;
-   border-radius: 2px;
-   font-size: 14px;
-   line-height: 16px;
-}
-.itemContainer-soldby {
-   font-size: 12px;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   max-width: 62%;
-   color: #7b7d83;
+   /* margin-top: 15px; */
 }
 
-.itemPriceContainer {
-   display: flex;
-   font-size: 17px;
-   margin-top: 10px;
-}
-
-.og-price {
-   color: #1a286e;
-   text-decoration: line-through;
-}
-.deliveryContainer {
-   margin-top: 10px;
-   font-size: 12px;
-   display: flex;
-   align-items: center;
-}
 /* Right Block styling */
+<<<<<<<< HEAD:Style and Script/cart.css
 
 .block > .right-block {
    width: 45%;
@@ -567,6 +533,10 @@
    padding: 7px 14px;
    letter-spacing: 3px;
    text-transform: uppercase;
+========
+.{
+   donationStrip-Header
+>>>>>>>> main:address.css
 }
 .bagfootercontainer {
    margin-top: 50px;
@@ -589,10 +559,11 @@
    font-weight: 500;
 }
 /* Quick Styling CSS */
-
 .btn-111 {
    font-size: 12px;
    position: absolute;
+   top: 0px;
+   right: 0px;
    padding: 4px 16px;
    font-weight: 600;
    border-radius: 2px;
@@ -600,45 +571,6 @@
    color: rgb(255, 63, 108);
    border: 1px solid #ff527b;
    cursor: pointer;
-}
-.btn-222 {
-   margin-top: 8px;
-   font-size: 12px;
-   font-weight: 600;
-   border-radius: 2px;
-   border: none;
-   background-color: transparent;
-   color: rgb(255, 63, 108);
-   cursor: pointer;
-}
-.btn-333 {
-   width: 100%;
-   letter-spacing: 1px;
-   margin-top: 16px;
-   margin-bottom: 16px;
-   font-size: 14px;
-   font-weight: 600;
-   border-radius: 2px;
-   border: none;
-   padding: 10px 16px;
-   background-color: rgb(255, 63, 108);
-   color: rgb(255, 255, 255);
-   cursor: pointer;
-}
-.KnowMore {
-   color: #ff3f6c;
-   font-weight: 600;
-   cursor: pointer;
-   width: fit-content;
-   font-size: 14px;
-   margin-top: 10px;
-}
-.priceDetail-applyCoupon {
-   color: #ff3f6c;
-   font-weight: 600;
-   cursor: pointer;
-   width: fit-content;
-   font-size: 12px;
 }
 .width-80 {
    width: 80%;
@@ -671,6 +603,7 @@
 }
 .strikethrough {
    text-decoration: line-through;
+   font-size: 16px;
 }
 .orange-1 {
    color: #ff905a;

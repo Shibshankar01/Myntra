@@ -1,0 +1,476 @@
+@font-face {
+    font-family: "Whitney";
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+ }
+ * {
+    font-family: "Whitney";
+    padding: 0px;
+    margin: 0px;
+ }
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px, rgba(17, 17, 26, 0.05) 0px 0px 32px;
+
+}
+#navbar label {
+    font-weight: bold;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#left {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#left>img {
+    width: 50px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    margin: 0px 30px 0px 30px;
+}
+
+#left>ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+#left>div {
+    padding: 30px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#left>div:nth-child(2):hover {
+    border-bottom: 5px solid red;
+    padding: 30px 15px 25px 15px;
+}
+
+#left>div:nth-child(3):hover {
+    border-bottom: 5px solid #e84393;
+    padding: 30px 15px 25px 15px;
+}
+
+#left>div:nth-child(4):hover {
+    border-bottom: 5px solid rgb(255, 123, 0);
+    padding: 30px 15px 25px 15px;
+}
+
+#left>div:nth-child(5):hover {
+    border-bottom: 5px solid #f1c40f;
+    padding: 30px 15px 25px 15px;
+}
+
+#left>div:nth-child(6):hover {
+    border-bottom: 5px solid #00b894;
+    padding: 30px 15px 25px 15px;
+}
+
+#left>div:nth-child(7):hover {
+    border-bottom: 5px solid orangered;
+    padding: 30px 15px 25px 15px;
+}
+
+#subMenu {
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#subMenu li {
+    list-style: none;
+    text-align: left;
+    line-height: 25px;
+    color: gray;
+}
+
+#subMenu ul {
+    display: flex;
+    padding: 0px 10px;
+}
+
+#subMenu ul>div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px 20px;
+
+}
+
+.categories {
+    text-align: left;
+    font-size: 12px;
+    color: gray;
+    font-weight: lighter;
+}
+
+.categories p, h3 {
+    margin: 5px 0px;
+}
+.categories p:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.categories hr {
+    width: 180px;
+}
+
+#men:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+    left: 100px;
+}
+
+#men .categories h3 {
+    color: red;
+}
+
+#women:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+    left: 100px;
+}
+
+#women .categories h3 {
+    color: #e84393;
+}
+
+#kids:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+    left: 100px;
+}
+
+#kids .categories h3 {
+    color: rgb(255, 123, 0);
+}
+#homeLiving:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+    left: 100px;
+}
+
+#homeLiving .categories h3 {
+    color: #f1c40f;
+}
+
+#beauty:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+    left: 100px;
+}
+
+#beauty .categories h3 {
+    color: #00b894;
+}
+
+sup {
+    color: red;
+    font-size: 10px;
+}
+
+#studio:hover #subMenu {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 79px;
+    left: 370px;
+
+}
+
+#studio .categories h3 {
+    color: orangered;
+
+}
+
+#studio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#studioBanner {
+    width: 550px;
+    margin: 10px 0px 20px 0px;
+}
+
+#studio button {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    margin: 0px 0px 10px 0px;
+    cursor: pointer;
+}
+
+#studio button span {
+    font-size: 20px;
+}
+
+
+
+
+#right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#right>div:first-child {
+    width: 50%;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: #f5f5f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#right>div:first-child img {
+    width: 18px;
+}
+
+#right input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin-left: 10px;
+    color: #727389;
+    background-color: #f5f5f6;
+}
+
+.rightSideIcons {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.rightSideIcons>img {
+    width: 20px;
+}
+
+.profile:hover {
+    border-bottom: 5px solid red;
+    padding: 20px 15px 15px 15px;
+}
+
+#signin {
+    display: none;
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#signin h3 {
+    margin: 0px;
+    color: black;
+    font-size: 14px;
+}
+
+#signin p {
+    margin: 0px 0px 10px 0px;
+    color: gray;
+    font-weight: lighter;
+}
+
+#signin li {
+    list-style: none;
+    text-align: left;
+    line-height: 25px;
+    color: gray;
+}
+
+#signin li:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.profile:hover #signin {
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 78.2px;
+}
+
+#signin button {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    margin: 0px 0px 10px 0px;
+    cursor: pointer;
+}
+
+#signin button:hover {
+    border: 1px solid red;
+    padding: 9px 19px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1300px) {
+   
+    #homeLiving {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 600px;
+        overflow: scroll;
+    }
+}
+  /* Medium Screen */
+@media only screen and (min-width: 320px) and (max-width: 1000px) {
+    #left {
+        width: 40%;
+        margin: 0px 10px;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    #right {
+        width: 60%;
+    }
+    
+    #subMenu > ul{
+        width: 500px;
+        overflow: scroll;
+    }
+    
+  }
+
+
+  /* Small Screen */
+  @media only screen and (min-width: 320px) and (max-width: 699px) {
+    #left {
+        width: 40%;
+        margin: 0px 10px;
+    }
+    #kids {
+        display: none;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    #right {
+        width: 40%;
+    }
+    #right > div {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 400px;
+        overflow: scroll;
+    }
+    #right>div:first-child {
+        width: 100%;
+    }
+
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 500px) {
+   
+    #left {
+        width: 100%;
+    }
+    #kids {
+        display: none;
+    }
+    #homeLiving {
+        display: none;
+    }
+    #beauty {
+        display: none;
+    }
+    #studio {
+        display: none;
+    }
+    #right {
+        display: none;
+    }
+    #subMenu > ul{
+        width: 300px;
+        overflow: scroll;
+    }
+    #subMenu > ul{
+        width: 300px;
+        overflow: scroll;
+    }
+}
+
+
+
+/* #homepage {
+    height: 1000px;
+    background-color: #f0f0f0;
+} */
