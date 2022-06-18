@@ -112,6 +112,7 @@ body {
 .categories {
    text-align: left;
    line-height: 0px;
+   /*  */
    font-size: 12px;
    color: gray;
    font-weight: lighter;
