@@ -10,7 +10,7 @@ function updatePriceblock() {
    let couponAmt = orderData[0].coupon_amt.toFixed(2);
    if (couponAmt !== 0) {
       document.querySelector(".applyCoupon").parentNode.style.display = "flex";
-      document.querySelector(".applyCoupon").innerText = "-₹" + orderData[0].coupon_amt.toFixed(2);
+      document.querySelector(".applyCoupon").innerText = "-₹" + orderData[0].coupon_amt;
    } else {
       document.querySelector(".applyCoupon").parentNode.style.display = "none";
    }
@@ -22,5 +22,23 @@ function updatePriceblock() {
    } else {
       document.querySelector(".donation-price").parentNode.style.display = "none";
    }
+   document.querySelector(".convenience-price").innerText = "₹" + orderData[0].convenience_amt;
    document.querySelector(".priceDetail-total").innerText = "₹" + orderData[0].order_amt;
 }
+
+//Send OTP
+
+document.querySelector(".cardotpBtn").addEventListener("click", () => {
+   let cardNumber = document.querySelector(".cardNumber").value;
+   let cardName = document.querySelector(".cardName").value;
+   let cardExp = document.querySelector(".cardExp").value;
+   let cardCVV = document.querySelector(".cardCVV").value;
+   let cardOtpBtn = document.querySelector(".cardotpBtn").value;
+
+   if (cardNumber == "" || cardName == "" || cardExp == "" || cardCVV == "") {
+      alert("Kindly fill all card details");
+   } else if (cardOtpBtn == "Send OTP") {
+      document.querySelector(".cardOTP").style.display = "block";
+      cardOtpBtn.value = "Varify OTP";
+   }
+});
