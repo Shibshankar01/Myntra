@@ -1173,7 +1173,11 @@ sup {
         if(checklogin(logindata.givenemail,logindata.givenpassword)==true){
             localStorage.setItem("loginmembers",JSON.stringify(logindata))
          alert("WELCOME TO MYNTRA")
-        }else{
+         checkname(logindata.givenemail,logindata.givenpassword)
+           
+         
+        }
+        else{
             alert("credentials are wrong")
         }
         
@@ -1192,6 +1196,14 @@ sup {
             }else{
                 return false
             }
+        }
+        function checkname(givenmail,givenpassword){
+            currentuser=loginpagedata.filter(function(elem){
+                return elem.EMAIL==givenmail && elem.PASSWORD==givenpassword
+            })
+            console.log(currentuser)
+           localStorage.setItem("name",JSON.stringify(currentuser.NAME))
+           localStorage.setItem("mobile",JSON.stringify(currentuser.MOBILE))
         }
         
     }
