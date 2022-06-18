@@ -100,7 +100,7 @@ function increment(id) {
 
 function singleItemView(product) {
    localStorage.setItem("singleItemView", JSON.stringify(product));
-   window.location.href="singleItemView.html";
+   window.location.href="Cart.html";
 }
 
 function sort() {
