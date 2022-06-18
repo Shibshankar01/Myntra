@@ -170,7 +170,7 @@ checkBoxFive.addEventListener("click", filterBrand);
 
 let checkBoxSix=document.querySelector("#six");
 checkBoxSix.addEventListener("click", filterBrand);
-filterBrand()
+filterBrand();
 function filterBrand(){
    let firstBrandArray=[];
    let secondBrandArray=[];
