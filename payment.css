@@ -168,6 +168,13 @@ input {
 .cardOTP {
    display: none;
 }
+.OTPVerificationMsg {
+   display: none;
+   color: teal;
+   font-weight: 600;
+   font-size: 14px;
+   text-align: center;
+}
 /* Right Block */
 .block > .right-block {
    width: 45%;
@@ -216,6 +223,13 @@ input {
 }
 .total-container {
    font-weight: 600;
+}
+.PaymentVerificationMsg {
+   display: none;
+   color: teal;
+   font-weight: 600;
+   font-size: 14px;
+   text-align: center;
 }
 
 /* footer */
