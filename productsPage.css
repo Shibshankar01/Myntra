@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 #mainContainer{
     display: flex;
     justify-content: space-between;
@@ -18,7 +20,7 @@
 }
 #container>div{
     height: 360px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
 }
 #container>div>img{
@@ -81,11 +83,14 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 20px;
 }
 *{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+#first-heading{
+    margin-top: 20px;
 }
 #first-heading>span{
     font-size: 14px;
@@ -102,9 +107,11 @@
     color: #878b94;
     font-size: 16px;
 }
-#leftTab{
-    height: 200px;
-    border: 1px solid red;
+#sortSection{
+    margin-top: 25px;
+}
+#leftTab>h3+h3{
+    margin-top: 40px;
 }
 @media all and (min-width: 800px) and (max-width: 1024px){
     #container{

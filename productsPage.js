@@ -1,5 +1,23 @@
+let menDiv = document.querySelector("#men");
+menDiv.addEventListener("click", menClick);
+let womenDiv = document.querySelector("#women");
+womenDiv.addEventListener("click", womenClick);
+let kidsDiv = document.querySelector("#kids");
+kidsDiv.addEventListener("click", kidsClick);
+
+function menClick(){
+   localStorage.setItem("clickedOn", "Men");
+   window.location.href = "productsPage.html";
+}
+function womenClick(){
+   localStorage.setItem("clickedOn", "Women");
+   window.location.href = "productsPage.html";
+}
+function kidsClick() {
+   localStorage.setItem("clickedOn", "Kids");
+   window.location.href = "productsPage.html"
+}
 let productData = JSON.parse(localStorage.getItem("allProducts")) || [];
-localStorage.setItem("clickedOn", "Kids");
 
 let clickedOn = localStorage.getItem("clickedOn")||"";
 let filteredData = [];
@@ -93,32 +111,35 @@ function increment(id) {
 
 function singleItemView(product) {
    localStorage.setItem("singleItemView", JSON.stringify(product));
+   window.location.href="singleItemView.html";
 }
 
 function sort() {
+   let filteredList = JSON.parse(localStorage.getItem("filteredProducts")) || [];  
    if(sortSelect.value=="sortDiscount"){
-      filteredData.sort(function(a, b){
+      filteredList.sort(function(a, b){
          return b.discount-a.discount;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPriceAscending") {
-      filteredData.sort(function(a, b){
+      filteredList.sort(function(a, b){
          return a.variant_price-b.variant_price;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPriceDescending") {
-      filteredData.sort(function(a,b){
+      filteredList.sort(function(a,b){
          return b.variant_price-a.variant_price;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPopularity") {
-      filteredData.sort(function(a,b){
+      filteredList.sort(function(a,b){
          return b.counter-a.counter;
       });
-      displayProducts(filteredData)
+      displayProducts(filteredList)
    }else{
       window.location.reload();
    }
+   console.log(filteredList);
 }
 
 function filterSize() {
@@ -130,4 +151,71 @@ function filterSize() {
    }else{
       displayProducts(filteredData);
    }
+}
+
+let checkBoxOne=document.querySelector("#one")
+checkBoxOne.addEventListener("click",filterBrand)
+
+let checkBoxTwo=document.querySelector("#two")
+checkBoxTwo.addEventListener("click",filterBrand)
+
+let checkBoxThree=document.querySelector("#three")
+checkBoxThree.addEventListener("click",filterBrand)
+
+let checkBoxFour=document.querySelector("#four");
+checkBoxFour.addEventListener("click", filterBrand);
+
+let checkBoxFive=document.querySelector("#five");
+checkBoxFive.addEventListener("click", filterBrand);
+
+let checkBoxSix=document.querySelector("#six");
+checkBoxSix.addEventListener("click", filterBrand);
+filterBrand()
+function filterBrand(){
+   let firstBrandArray=[];
+   let secondBrandArray=[];
+   let thirdBrandArray=[];
+   let fourthBrandArray=[];
+   let fifthBrandArray=[];
+   let sixthBrandArray=[];
+   let defaultArray = [];
+   let filteredBrand=[];
+   if (checkBoxOne.checked==true) {
+      firstBrandArray = filteredData.filter(function (elem) {
+         return elem.brand == document.querySelector("#one").value;
+      })
+   }
+   if (checkBoxTwo.checked==true) {
+      secondBrandArray = filteredData.filter(function (elem) {
+         return elem.brand == document.querySelector("#two").value;
+      })
+   }
+   if (checkBoxThree.checked==true) {
+      thirdBrandArray = filteredData.filter(function(elem){
+         return elem.brand == document.querySelector("#three").value
+      })
+   }
+   if(checkBoxFour.checked==true){
+      fourthBrandArray=filteredData.filter(function(elem){
+         return elem.brand == document.querySelector("#four").value;
+      })
+   }
+   if (checkBoxFive.checked==true) {
+      fifthBrandArray=filteredData.filter(function(elem){
+         return elem.brand == document.querySelector("#five").value;
+      })
+   }
+   if (checkBoxSix.checked==true) {
+      sixthBrandArray=filteredData.filter(function(elem){
+         return elem.brand == document.querySelector("#six").value;
+      })
+   }
+   else if(checkBoxOne.checked==false && checkBoxTwo.checked==false && checkBoxThree.checked==false && checkBoxFour.checked==false  && checkBoxFive.checked==false && checkBoxSix.checked==false){
+      defaultArray = filteredData.filter(function(elem){
+         return true;
+      })
+   }
+   filteredBrand = firstBrandArray.concat(secondBrandArray, thirdBrandArray, fourthBrandArray, fifthBrandArray, sixthBrandArray, defaultArray);
+   displayProducts(filteredBrand);
+   localStorage.setItem("filteredProducts", JSON.stringify(filteredBrand));
 }
