@@ -62,16 +62,25 @@
                      <div class="PaymentCardContainer">
                         <div class="payment-Heading">CREADIT/DEBIT CARD</div>
                         <form class="cardDetailsContainer">
-                           <input class="cardNumber" type="tel" maxlength="20" value="" placeholder="Card Number" />
+                           <input
+                              class="cardNumber"
+                              type="tel"
+                              maxlength="16"
+                              minlength="16"
+                              pattern="[0-9]{16}"
+                              value=""
+                              placeholder="Card Number"
+                           />
                            <input class="cardName" type="text" maxlength="20" value="" placeholder="Name on Card" />
                            <div class="cardExpiryContainer">
-                              <input class="cardExp" type="tel" maxlength="5" pattern="\d*" value="" placeholder="Valid Thru(MM/YY)" />
-                              <input class="cardCVV" type="tel" maxlength="4" pattern="\d*" value="" placeholder="CVV" />
+                              <input class="cardExp" type="tel" minlength="5" pattern="[0-9]{2}/[0-9]{2}" value="" placeholder="Valid Thru(MM/YY)" />
+                              <input class="cardCVV" type="tel" minlength="4" pattern="[0-9]{4}" value="" placeholder="CVV" />
                            </div>
                            <div class="cardOTPContainer">
-                              <input class="cardotpBtn" type="button" value="Send OTP" />
-                              <input class="cardOTP" type="tel" maxlength="6" pattern="\d*" value="" placeholder="Enter OTP" />
+                              <input class="cardotpBtn" type="submit" value="Send OTP" />
+                              <input class="cardOTP" type="tel" maxlength="6" pattern="[0-9]{6}" value="" placeholder="Enter OTP" />
                            </div>
+                           <p class="OTPVerificationMsg">OTP Varified Successfully</p>
                         </form>
                      </div>
                   </div>
@@ -111,6 +120,7 @@
                   <span class="priceDetail-total">-</span>
                </div>
             </div>
+            <p class="PaymentVerificationMsg">Varifying Payment...</p>
             <div class="orderbtn-container">
                <button class="order-btn">PLACE ORDER</button>
             </div>

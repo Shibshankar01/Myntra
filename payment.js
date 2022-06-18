@@ -28,17 +28,36 @@ function updatePriceblock() {
 
 //Send OTP
 
-document.querySelector(".cardotpBtn").addEventListener("click", () => {
+document.querySelector(".cardotpBtn").addEventListener("click", (event) => {
+   event.preventDefault();
    let cardNumber = document.querySelector(".cardNumber").value;
    let cardName = document.querySelector(".cardName").value;
    let cardExp = document.querySelector(".cardExp").value;
    let cardCVV = document.querySelector(".cardCVV").value;
-   let cardOtpBtn = document.querySelector(".cardotpBtn").value;
+   let cardOtpBtn = document.querySelector(".cardotpBtn");
 
    if (cardNumber == "" || cardName == "" || cardExp == "" || cardCVV == "") {
       alert("Kindly fill all card details");
-   } else if (cardOtpBtn == "Send OTP") {
-      document.querySelector(".cardOTP").style.display = "block";
+   } else if (cardOtpBtn.value == "Send OTP") {
       cardOtpBtn.value = "Varify OTP";
+      document.querySelector(".cardOTP").style.display = "block";
+   } else if (cardOtpBtn.value == "Varify OTP") {
+      document.querySelector(".cardOTP").style.display = "none";
+      cardOtpBtn.style.display = "none";
+      document.querySelector(".OTPVerificationMsg").style.display = "block";
+      document.querySelector(".order-btn").style.display = "block";
    }
+});
+
+document.querySelector(".order-btn").addEventListener("click", (event) => {
+   let payMsg = document.querySelector(".PaymentVerificationMsg");
+   payMsg.style.display = "block";
+   setTimeout(() => {
+      payMsg.innerText = "Payment Varification Successfull. You will redirect to Home Page...";
+      localStorage.removeItem("orderData");
+   }, 1500);
+
+   setTimeout(() => {
+      window.location.href = "HomePage.html";
+   }, 3000);
 });
