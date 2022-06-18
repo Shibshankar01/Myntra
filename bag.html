@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         rel="icon"
+         href="data:image/png;base64,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"
+         type="image/x-icon"
+      />
+      <title>SHOPPING BAG</title>
+      <link rel="stylesheet" href="MyntraIcons.css" />
+      <link rel="stylesheet"  href="cart.css" />
+   </head>
+   <body>
+      <div class="navbar">
+         <nav class="navbar-header">
+            <div class="navbar-logo"><a href="" class="myntraweb-sprite desktop-logo sprites-headerLogo"></a></div>
+            <ol class="navbar-checkout-steps">
+               <li class="active">BAG</li>
+               <li class="divider"></li>
+               <li class="">ADDRESS</li>
+               <li class="divider"></li>
+               <li class="">PAYMENT</li>
+            </ol>
+            <div class="navbar-secureContainer">
+               <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" class="secureIcon" width="26" height="28" />
+               <div class="secure">100% SECURE</div>
+            </div>
+         </nav>
+      </div>
+      <div class="block">
+         <div class="left-block">
+            <div class="addressStrip">
+               <div class="addressStrip-title fs-12">Deliver to:<strong class=""> 401209</strong></div>
+               <button class="addressStrip-change">CHANGE ADDRESS</button>
+            </div>
+            <div class="offerStrip">
+               <h5 class="flex offer-title"><span class="myntraweb-sprite sprites-OfferIcon"></span> Available Offers</h5>
+               <ul class="offer-items">
+                  <li>10% Instant Discount on ICICI Bank Credit and Debit Cards on a min spend of Rs 3,500. TCA</li>
+                  <div class="offer-hide">
+                     <li>10% Instant Discount on Axis Bank Credit and Debit Cards on a min spend of Rs 3,000. TCA</li>
+                     <li>Flat Rs 150 Cashback on Paytm Wallet and Postpaid transaction on a min spend of Rs 1,500. TCA</li>
+                     <li>15% Cashback upto Rs 750 On ZestMoney Transactions. TCA</li>
+                     <li>10% Instant Discount + 5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA</li>
+                     <li>10% Cashback upto Rs 200 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000. TCA</li>
+                     <li>Upto Rs 500 Cashback on Mobikwik Wallet Transactions on a min spend of Rs 999.Use code MBK500 on Mobikwik.TCA</li>
+                     <li>Please enable Online transactions on your ICICI and Axis Bank Cards for a seamless shopping experience</li>
+                  </div>
+                  <a class="more-text flex">Show More <span class="myntraweb-sprite sprites-expandIcon "></span></a>
+               </ul>
+            </div>
+            <div class="itemContainer">
+               <div class="itemContainer-item">
+                  <div class="itemContainer-itemLeft">
+                     <!-- <div class="itemContainer-tickIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="itemComponents-activeProduct">
+                           <path
+                              fill-rule="evenodd"
+                              d="M11.83 6.11l-4.751 4.583a.604.604 0 0 1-.425.164h-.003a.608.608 0 0 1-.424-.16L4.176 8.74a.55.55 0 0 1 0-.805.62.62 0 0 1 .846 0l1.57 1.506c.03.028.078.027.107-.001l4.274-4.124a.62.62 0 0 1 .847-.01c.236.22.24.58.01.805M14.285 0H1.714C.77 0 0 .77 0 1.714v12.572C0 15.23.77 16 1.714 16h12.572C15.23 16 16 15.23 16 14.286V1.714C16 .77 15.23 0 14.286 0"
+                           ></path>
+                        </svg>
+                     </div> -->
+
+                     <img
+                        src="https://assets.myntassets.com/f_webp,dpr_2.8,q_60,w_210,c_limit,fl_progressive/assets/images/12816878/2020/12/8/992feaf9-6ccf-4880-8076-100237f3c1c91607426778122-HERENOW-Men-Tshirts-2751607426776423-1.jpg"
+                        alt=""
+                     />
+                  </div>
+                  <div class="itemContainer-itemRight">
+                     <h5 class="itemContainer-brand">HERE &amp; NOW</h5>
+                     <p class="itemContainer-title">HERENOW Men White Printed Pure Cotton T-shir Cotton T-shir Cotton T-shirt</p>
+                     <p class="itemContainer-soldby">Sold By: Omnitech Retail</p>
+                     <div class="sizeQtyContainer">
+                        <div class="item-size">Size: M</div>
+                        <div class="item-qty">Qty: 1</div>
+                     </div>
+                     <div class="itemPriceContainer">
+                        <h5 class="item-price">₹ 315</h5>
+                        <h5 class="og-price"> ₹ 699</h5>
+                        <h5 class="orange-1"> (55% OFF)</h5>
+                     </div>
+                     <div class="deliveryContainer">
+                        <span class="myntraweb-sprite sprites-greenTickIcon"></span>
+                        <span>Delivery By</span>
+                        <strong>21 Jun 2022</strong>
+                     </div>
+                  </div>
+                  <div class="itemContainer-closeIcon">
+                     <svg  width="16" height="16" class="item-closeIcon">
+                        <path
+                           d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+                        ></path>
+                     </svg>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Right Block -->
+         <div class="right-block">
+            <div class="donationStrip-container">
+               <p class="donationStrip-Header">DONATE FOR COVID-19 RELIEF</p>
+               <div class="donationStrip-Body">
+                  <div class="donationStrip-title flex">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="donationStrip-icon">
+                        <path
+                           fill-rule="nonzero"
+                           d="M14.85 2.14v11.71a1 1 0 0 1-1 1H2.14a1 1 0 0 1-1-1V2.14a1 1 0 0 1 1-1h11.71a1 1 0 0 1 1 1zM14.222 0H1.778C.8 0 0 .8 0 1.778v12.444C0 15.2.8 16 1.778 16h12.444C15.2 16 16 15.2 16 14.222V1.778C16 .8 15.2 0 14.222 0z"
+                        ></path>
+                     </svg>
+                     <span class="">Help India fight COVID-19</span>
+                  </div>
+                  <div class="donationStrip-pill">
+                     <div class="pillView-pill" data-key="10">
+                        <div class="pillView-textStyle" data-key="10">₹10</div>
+                     </div>
+                     <div class="pillView-pill" data-key="50">
+                        <div class="pillView-textStyle" data-key="50">₹50</div>
+                     </div>
+                     <div class="pillView-pill" data-key="100">
+                        <div class="pillView-textStyle" data-key="100">₹100</div>
+                     </div>
+                     <div class="pillView-pill">
+                        <input class="donationStrip-input" type="tel" maxlength="4" placeholder="Other" />
+                     </div>
+                  </div>
+                  <div class="donationStrip-KnowMore KnowMore">Know More</div>
+               </div>
+            </div>
+            <div class="coupons-container">
+               <p class="coupons-header">COUPONS</p>
+               <div class="coupons-content flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="coupons-couponIcon">
+                     <g fill="none" fill-rule="evenodd" transform="rotate(45 6.086 5.293)">
+                        <path
+                           stroke="#000"
+                           d="M17.5 10V1a1 1 0 0 0-1-1H5.495a1 1 0 0 0-.737.323l-4.136 4.5a1 1 0 0 0 0 1.354l4.136 4.5a1 1 0 0 0 .737.323H16.5a1 1 0 0 0 1-1z"
+                        ></path>
+                     </g>
+                  </svg>
+                  <span class="coupons-label">Apply Coupon</span>
+               </div>
+               <button class="btn-111 coupons-apply">APPLY</button>
+            </div>
+            <div class="giftWrap-container">
+               <p class="giftWrap-header">GIFTING &amp; PERSONALISATION</p>
+               <div class="giftWrap-content">
+                  <div class="giftWrap-giftIcon" style="background: none; height: 80px; width: 39px">
+                     <picture class="image-imgResponsive" style="width: 100%">
+                        <source srcset="https://constant.myntassets.com/checkout/assets/img/gift-big.webp" type="image/webp" />
+                        <img
+                           src="https://constant.myntassets.com/checkout/assets/img/gift-big.png"
+                           class="image-imgResponsive"
+                           alt="image"
+                           style="width: 100%"
+                        />
+                     </picture>
+                  </div>
+                  <div>
+                     <h3 class="giftWrap-title">Buying for a loved one?</h3>
+                     <div>Gift wrap and personalised message on card, Only for ₹25</div>
+                     <button class="btn-222 addGiftbtn">ADD GIFT WRAP</button>
+                  </div>
+               </div>
+            </div>
+            <div class="priceBlock-container">
+               <p class="priceBlock-priceHeader">PRICE DETAILS</p>
+               <div class="priceBreakUp-orderSummary">
+                  <div class="priceDetail-row">
+                     <span>Total MRP</span>
+                     <span class="priceDetail-value actual-price">₹699</span>
+                  </div>
+                  <div class="priceDetail-row">
+                     <span>Discount on MRP</span>
+                     <span class="priceDetail-value discount-price teal-1">-₹350</span>
+                  </div>
+                  <div class="priceDetail-row">
+                     <span>Coupon Discount</span>
+                     <span class="priceDetail-value applyCoupon">Apply Coupon</span>
+                  </div>
+                  <div class="priceDetail-row">
+                     <span>COVID-19 Donation</span>
+                     <span class="priceDetail-value donation-price">₹10</span>
+                  </div>
+                  <div class="priceDetail-row">
+                     <span>Convenience Fee <span class="KnowMore">Know More</span></span>
+                     <span class="priceDetail-value convenience-price">₹99</span>
+                  </div>
+               </div>
+            </div>
+            <div class="total-container">
+               <div class="priceDetail-row">
+                  <span>Total Amount</span>
+                  <span class="priceDetail-total">₹458</span>
+               </div>
+            </div>
+            <div class="orderbtn-container">
+               <button class="order-btn">PLACE ORDER</button>
+            </div>
+         </div>
+      </div>
+      <div class="bagfootercontainer">
+         <div class="bagfooter-images">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" alt="">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" alt="">
+         </div>
+         <div class="bagfooter-help">
+            Need help? Contact Us
+         </div>
+      </div>
+         <!-- Models -->
+         <div class="modal" id="qtymodal">
+            <div class="dialogs-Container">
+                <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="16"
+                   height="16"
+                   viewBox="0 0 16 16"
+                   data-testid="modal-close"
+                   class="modal-cancelIcon dialogs-cancelIcon"
+                >
+                   <path
+                      fill="#000"
+                      fill-rule="evenodd"
+                      d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+                   ></path>
+                </svg>
+                <h4 class="dialogs-header">Select Quantity</h4>
+                <div class="dialogs-list">
+                   <div id="1" class="dialogs-qtyitem dialogs-selected">1</div>
+                   <div id="2" class="dialogs-qtyitem">2</div>
+                   <div id="3" class="dialogs-qtyitem">3</div>
+                   <div id="4" class="dialogs-qtyitem">4</div>
+                   <div id="5" class="dialogs-qtyitem">5</div>
+                   <div id="6" class="dialogs-qtyitem">6</div>
+                   <div id="7" class="dialogs-qtyitem">7</div>
+                </div>
+                <button class="dialogs-qtybutton btn-333">DONE</div>
+                </button>
+         </div>
+         <div class="modal" id="sizemodal">
+            <div class="dialogs-Container">
+                <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="16"
+                   height="16"
+                   viewBox="0 0 16 16"
+                   data-testid="modal-close"
+                   class="modal-cancelIcon dialogs-cancelIcon"
+                >
+                   <path
+                      fill="#000"
+                      fill-rule="evenodd"
+                      d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+                   ></path>
+                </svg>
+                <h4 class="dialogs-header">Select Size</h4>
+                <div class="dialogs-list">
+                   <div id="1" class="dialogs-sizeitem dialogs-selected">S</div>
+                   <div id="2" class="dialogs-sizeitem">M</div>
+                   <div id="3" class="dialogs-sizeitem">L</div>
+                   <div id="4" class="dialogs-sizeitem">XL</div>
+                   <div id="5" class="dialogs-sizeitem">XLL</div>
+                </div>
+                <button class="dialogs-sizebutton btn-333">DONE</div>
+                </button>
+         </div>
+         <div class="modal" id="knoworemodal">
+                <div class="dialogs-Container">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        data-testid="modal-close"
+                        class="modal-cancelIcon dialogs-cancelIcon"
+                    >
+                        <path
+                            fill="#000"
+                            fill-rule="evenodd"
+                            d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+                        ></path>
+                    </svg>
+                    <h4 class="dialogs-header">Help India fight with COVID-19</h4>
+                    <img src="https://constant.myntassets.com/checkout/assets/img/donationBanner.webp" class="image-imgResponsive" alt="image" style="width: 100%;">
+                    <div class="knowMore-textContainer">
+                        <ul class="knowMore-list">
+                            <li><div class="knowMore-text ">Donation amount is being collected on behalf of GiveIndia </div></li>
+                            <li><div class="knowMore-text ">Donation amount is non-refundable. </div></li>
+                            <li><div class="knowMore-text ">Myntra will share your Name, Email ID and Address with GiveIndia to send the receipt for the donation amount. </div></li>
+                            <li><div class="knowMore-text ">You'll receive Donation receipt to claim for tax exemption under 80G on your email. </div></li>
+                            <div class="knowMore-text knowMore-footer">Have a question? check <a class="knowMore-anchor" href="#">FAQs</a></div>
+                        </ul>
+                    </div>
+                </div>
+         </div> 
+         <div class="modal" id="couponsmodal">
+            <div class="dialogs-Container">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    data-testid="modal-close"
+                    class="modal-cancelIcon dialogs-cancelIcon"
+                >
+                    <path
+                        fill="#000"
+                        fill-rule="evenodd"
+                        d="M9.031 8l6.756-6.756a.731.731 0 0 0 0-1.031.732.732 0 0 0-1.031 0L8 6.969 1.244.213a.732.732 0 0 0-1.031 0 .731.731 0 0 0 0 1.03L6.969 8 .213 14.756a.731.731 0 0 0 0 1.031.732.732 0 0 0 1.031 0L8 9.031l6.756 6.756a.732.732 0 0 0 1.031 0 .731.731 0 0 0 0-1.03L9.031 8z"
+                    ></path>
+                </svg>
+                <h4 class="dialogs-header">APPLY COUPON</h4>
+                <div class="couponsFor-couponsPageContainer">
+                     <input class="coupons-textInput" placeholder="Enter coupon code">
+                     <button class="coupons-applyButton btn-333">Apply Coupon</button>
+                </div>
+            </div>
+     </div> 
+      
+   </body>
+</html>
+<script src="bag.js"></script>
