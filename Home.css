@@ -136,6 +136,7 @@
         justify-content: center;
         margin: auto;
         width: 85%;
+        
     
     }
     
@@ -418,11 +419,13 @@
         }
         #container1{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4);
             justify-content: center;
             margin: auto;
-            width: 85%;
+            width: 100%;
+            padding: 0%;
+           
         
         }
         
@@ -431,6 +434,11 @@
             justify-content: center;
             align-items: center;
             padding: 0px 20px 0px 10px;
+            margin-bottom: 20px;
+            
+            height:fit-content;
+            
+    
         }
         
         .mobileApp{
@@ -459,7 +467,7 @@
         
         }
         #section5 {
-            width: 85%;
+            width: 90%;
             text-align: left;
             font-weight: lighter;
             margin: auto;
