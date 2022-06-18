@@ -1,22 +1,3 @@
-let menDiv = document.querySelector("#men");
-menDiv.addEventListener("click", menClick);
-let womenDiv = document.querySelector("#women");
-womenDiv.addEventListener("click", womenClick);
-let kidsDiv = document.querySelector("#kids");
-kidsDiv.addEventListener("click", kidsClick);
-
-function menClick(){
-   localStorage.setItem("clickedOn", "Men");
-   window.location.href = "productsPage.html";
-}
-function womenClick(){
-   localStorage.setItem("clickedOn", "Women");
-   window.location.href = "productsPage.html";
-}
-function kidsClick() {
-   localStorage.setItem("clickedOn", "Kids");
-   window.location.href = "productsPage.html"
-}
 let productData = JSON.parse(localStorage.getItem("allProducts")) || [];
 
 let clickedOn = localStorage.getItem("clickedOn")||"";
@@ -31,21 +12,27 @@ if(clickedOn=="Kids"){
    })
 }
 
+firstHeadingText();
+secondHeadingText(filteredData.length);
+function firstHeadingText(){
+   let firstHeadingSpan = document.querySelector("#first-heading>span:nth-child(2)");
+   let span = document.createElement("span");
+   span.innerText = clickedOn;
+   span.style.fontWeight="bolder"
+   firstHeadingSpan.after(span);
+}
+function secondHeadingText(arrlength){
+   let secondHeadingSpan = document.querySelector("#second-heading>span:first-child");
+   let spanItems = document.createElement("span");
+   spanItems.innerText=" - "+arrlength;
+   secondHeadingSpan.before(spanItems);
+   let secondHeadingSpanTwo = document.querySelector("#second-heading>span:first-child");
+   let spanTwo = document.createElement("span");
+   spanTwo.innerText=clickedOn
+   secondHeadingSpanTwo.before(spanTwo)
+}
 
-let firstHeadingSpan = document.querySelector("#first-heading>span:nth-child(2)");
-let span = document.createElement("span");
-span.innerText = clickedOn;
-span.style.fontWeight="bolder"
-firstHeadingSpan.after(span);
 
-let secondHeadingSpan = document.querySelector("#second-heading>span:first-child");
-let spanItems = document.createElement("span");
-spanItems.innerText=" - "+filteredData.length;
-secondHeadingSpan.before(spanItems);
-let secondHeadingSpanTwo = document.querySelector("#second-heading>span:first-child");
-let spanTwo = document.createElement("span");
-spanTwo.innerText=clickedOn+"s Items"
-secondHeadingSpanTwo.before(spanTwo)
 
 let sortSelect = document.querySelector("#sort");
 sortSelect.addEventListener("change", sort);
@@ -78,10 +65,11 @@ function displayProducts(productList) {
          increment(productList[i].ID);
          singleItemView(productList[i]);
       });
-      div.addEventListener("mouseenter", changeImage);
+      div.addEventListener("mouseover", changeImage);
+      let timer = null;
       function changeImage(){
             let i=0;
-            setInterval(function(){
+            timer = setInterval(function(){
                if(i>=imageArr.length-1){
                   i=0;
                }else{
@@ -92,6 +80,7 @@ function displayProducts(productList) {
       }
       div.addEventListener("mouseout", function () {
          img.src = imageArr[0];
+         clearInterval(timer);
       })
       document.querySelector("#container").append(div);
     }
