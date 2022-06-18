@@ -1,3 +1,8 @@
+let bag = document.querySelector(".bag");
+bag.addEventListener("click", function () {
+   window.location.href = "bag.html";
+});
+
 let menDiv = document.querySelector("#men");
 menDiv.addEventListener("click", menClick);
 let womenDiv = document.querySelector("#women");
