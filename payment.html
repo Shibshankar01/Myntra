@@ -59,8 +59,23 @@
                      <div class="paymentOptions paymentOptions-EMI">EMI/Pay Later</div>
                      <div class="paymentOptions paymentOptions-COD">Cash On Delivery</div>
                   </div>
-
-                  <div class="payment-itemRight"></div>
+                  <div class="payment-itemRight">
+                     <div class="PaymentCardContainer">
+                        <div class="payment-Heading">CREADIT/DEBIT CARD</div>
+                        <form class="cardDetailsContainer">
+                           <input type="tel" maxlength="20" value="" placeholder="Card Number" />
+                           <input type="text" maxlength="20" value="" placeholder="Name on Card" />
+                           <div class="cardExpiryContainer">
+                              <input type="tel" maxlength="5" pattern="\d*" value="" placeholder="Valid Thru(MM/YY)" />
+                              <input type="tel" maxlength="4" pattern="\d*" value="" placeholder="CVV" />
+                           </div>
+                           <div class="cardOTPContainer">
+                              <input class="cardotpBtn" type="button" value="Send OTP" />
+                              <input class="cardOTP" type="tel" maxlength="6" pattern="\d*" value="" placeholder="Enter OTP" />
+                           </div>
+                        </form>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
