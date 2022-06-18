@@ -45,10 +45,10 @@
             <div class="addressStrip">
                 <input type="radio" name="" id="radio" checked="checked">
                 <div id="address-details">
-                    <h4 id="name"></h4>
-                    <p id=""><span id="add"></span>,<span id="loc"></span></p>
-                    <p><span id="city"></span>,<span id="state"></span>- <span id="pin"></span> </p>
-                    <p class="mob">mobile: <span id="mob"></span></p>
+                    <h4  id="name"></h4>
+                    <p class="add-font" id=""><span id="add" class="test"></span>,<span id="loc"></span></p>
+                    <p class="add-font"><span id="city"></span>,<span id="state"></span>- <span id="pin"></span> </p>
+                    <p class="add-font" id="pmob">Mobile: <span id="mob"></span></p>
                     <div id="edit">
                         <div>REMOVE</div>
                         <div>EDIT</div>
@@ -66,22 +66,30 @@
         <!-- Right Block -->
         <div class="right-block">
             <div class="priceBlock-container">
-                <p class="priceBlock-priceHeader">PRICE DETAILS (1 Item)</p>
-                <div class="priceBreakUp-orderSummary" id="priceBlock">
-                    <div class="priceDetail-row">
-                        <span>Total MRP</span>
-                        <span class="priceDetail-value">₹699</span>
-                    </div>
-                    <div class="priceDetail-row">
-                        <span>Discount on MRP</span>
-                        <span class="priceDetail-value priceDetail-discount teal-1">-₹350</span>
-                    </div>
-                    <div class="priceDetail-row">
-                        <span>Convenience Fee <span class="KnowMore">Know More</span></span>
-                        <span class="priceDetail-value">₹99</span>
-                    </div>
+                <p class="priceBlock-priceHeader">PRICE DETAILS</p>
+                <div class="priceBreakUp-orderSummary">
+                   <div class="priceDetail-row">
+                      <span>Total MRP</span>
+                      <span class="priceDetail-value actual-price">-</span>
+                   </div>
+                   <div class="priceDetail-row">
+                      <span>Discount on MRP</span>
+                      <span class="priceDetail-value discount-price teal-1">-</span>
+                   </div>
+                   <div class="priceDetail-row">
+                      <span>Coupon Discount</span>
+                      <span class="priceDetail-value applyCoupon">-</span>
+                   </div>
+                   <div class="priceDetail-row">
+                      <span>COVID-19 Donation</span>
+                      <span class="priceDetail-value donation-price">-</span>
+                   </div>
+                   <div class="priceDetail-row">
+                      <span>Convenience Fee <span class="KnowMore">Know More</span></span>
+                      <span class="priceDetail-value convenience-price">-</span>
+                   </div>
                 </div>
-            </div>
+             </div>
             <div class="total-container">
                 <div class="priceDetail-row">
                     <span>Total Amount</span>

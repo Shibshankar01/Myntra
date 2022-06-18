@@ -131,6 +131,7 @@ input {
 #add-address{
     border:1px solid #535665;
     padding: 10px;
+    border-radius: 5px;
 }
 #edit{
     display: flex;

@@ -267,7 +267,7 @@ input {
    margin-top: 0px;
 }
 
-.mob {
+#pmob {
    margin: 20px 0px;
 }
 
@@ -295,4 +295,14 @@ input {
 #mob {
    font-size: 14px;
    font-weight: bold;
+}
+
+.add-font{
+   color: #424556;
+   font-size: 13px;
+   margin-top: 3px;
+   
+}
+h4{
+   margin-bottom: 10px;
 }

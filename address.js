@@ -25,7 +25,7 @@ function updatePriceblock() {
    document.querySelector(".convenience-price").innerText = "₹" + orderData[0].convenience_amt;
    document.querySelector(".priceDetail-total").innerText = "₹" + orderData[0].order_amt;
 }
-document.querySelector("#")
+
 document.querySelector("form").addEventListener("submit",addfun);
 let x =  document.querySelector("form");
 let addArr=JSON.parse(localStorage.getItem("addDetails"))||[];
