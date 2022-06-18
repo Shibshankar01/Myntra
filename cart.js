@@ -1,27 +1,3 @@
-let obj = {
-   ID: "8ec62e9d32f52999eda6e2bccb777218",
-   size: "XS",
-   brand: "Anouk",
-   care_instructions: "Polyester |  Dry-clean",
-   dominant_material: "Polyester",
-   title: "Anouk Women Maroon Solid A-Line Kurta",
-   actual_color: "Maroon",
-   dominant_color: "Maroon",
-   product_type: "A-Line Kurta",
-   images:
-      "http://assets.myntassets.com/v1/assets/images/6551403/2018/12/19/1ab6bfba-4825-4e59-ac0e-21e1ebb63aeb1545212392273-Anouk-Women-Maroon-Solid-A-Line-Kurta-8341545212391512-1.jpg | http://assets.myntassets.com/v1/assets/images/6551403/2018/12/19/b3670fb6-a561-40b1-9d69-9493cbbc582c1545212392251-Anouk-Women-Maroon-Solid-A-Line-Kurta-8341545212391512-2.jpg | http://assets.myntassets.com/v1/assets/images/6551403/2018/12/19/848be171-6b6f-41e6-9af8-0409bdb545f31545212392236-Anouk-Women-Maroon-Solid-A-Line-Kurta-8341545212391512-3.jpg | http://assets.myntassets.com/v1/assets/images/6551403/2018/12/19/d3af7853-de3f-406e-a895-c86ca8a5347f1545212392223-Anouk-Women-Maroon-Solid-A-Line-Kurta-8341545212391512-4.jpg",
-   type: "Clothing/Women/Kurtas/Anouk/More by Anouk",
-   variant_price: 1359,
-   variant_compare_at_price: 3399,
-   ideal_for: "Women",
-   is_in_stock: "In Stock",
-   inventory:
-      "Shape : A-Line | Sleeve Styling : Regular Sleeves | Occasion : Festive | Print or Pattern Type : Ethnic Motifs | Number of Components : 1 | Design Styling : Regular | Colour Family : Earthy | Neck : Round Neck | Pattern : Solid | Body or Garment Size : To-Fit Denotes Body Measurements in | Sleeve Length : Three-Quarter Sleeves | Weave Pattern : Regular | Fabric Purity : Synthetic | Stitch : Ready to Wear | Hemline : Flared | Wash Care : Dry Clean | Ornamentation : Zari | Weave Type : Machine Weave | Length : Ankle Length | Fabric : Polyester",
-   product_id: 6551403,
-};
-
-localStorage.setItem("singleItemView", JSON.stringify(obj));
-
 displayData();
 
 function displayData() {

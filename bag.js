@@ -64,10 +64,10 @@ document.querySelector(".coupons-applyButton").addEventListener("click", () => {
    let flag = false;
    for (let k in allcoupons) {
       if (couponCode.toUpperCase() == k) {
-         totalAmt = eval(actualAmt + allcoupons[k]).toFixed(2);
+         totalAmt = +eval(actualAmt + allcoupons[k]).toFixed(2);
          document.querySelector(".coupons-label").innerText = k;
          document.querySelector(".coupons-label").style.color = "#03a685";
-         couponAmt = actualAmt - totalAmt;
+         couponAmt = +(actualAmt - totalAmt).toFixed(2);
          flag = true;
          break;
       }
@@ -295,7 +295,7 @@ function updatePriceblock() {
 
    if (couponAmt !== 0) {
       document.querySelector(".applyCoupon").parentNode.style.display = "flex";
-      document.querySelector(".applyCoupon").innerText = "-₹" + couponAmt.toFixed(2);
+      document.querySelector(".applyCoupon").innerText = "-₹" + couponAmt;
    } else {
       document.querySelector(".applyCoupon").parentNode.style.display = "none";
    }
@@ -306,8 +306,9 @@ function updatePriceblock() {
    } else {
       document.querySelector(".donation-price").parentNode.style.display = "none";
    }
-   orderAmt = Number((+totalAmt + +covidDon).toFixed(2));
-   document.querySelector(".priceDetail-total").innerText = "₹" + (+orderAmt + 99);
+
+   orderAmt = Number.parseFloat(totalAmt + covidDon + 99).toFixed(2);
+   document.querySelector(".priceDetail-total").innerText = "₹" + orderAmt;
 }
 //Delete Item from Cart
 function deleteItem(ind) {
@@ -331,7 +332,7 @@ document.querySelector(".order-btn").addEventListener("click", () => {
    };
    let allOrderData = JSON.parse(localStorage.getItem("orderData")) || [];
    allOrderData.push(orderData);
-
+   console.log(allOrderData);
    localStorage.setItem("orderData", JSON.stringify(allOrderData));
    window.location.href = "address.html";
 });
