@@ -52,7 +52,7 @@
 /* block css */
 .block {
    display: flex;
-   max-width: 900px;
+   max-width: 1000px;
    margin: auto;
 }
 
@@ -124,14 +124,31 @@
    align-items: center;
    justify-content: center;
    font-weight: 600;
+   color: #424553;
 }
 .paymentOptions-Card {
    background-color: white;
 }
 .payment-itemRight {
    width: 70%;
+   padding: 8px 20px;
 }
-
+.cardDetailsContainer {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 10px;
+}
+.cardExpiryContainer {
+   display: flex;
+   justify-content: space-between;
+}
+input {
+   height: 35px;
+   outline: none;
+   border: 1px solid #d4d5d9;
+   padding: 0px 10px;
+   border-radius: 2px;
+}
 /* Right Block */
 .block > .right-block {
    width: 45%;
@@ -143,6 +160,7 @@
 }
 
 .order-btn {
+   display: none;
    width: 100%;
    letter-spacing: 1px;
    font-size: 14px;
