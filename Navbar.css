@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@font-face {
+    font-family: "Whitney";
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+ }
+ * {
+    font-family: "Whitney";
+    padding: 0px;
+    margin: 0px;
+ }
 
 body {
     margin: 0;
@@ -17,11 +31,16 @@ body {
     align-items: center;
     box-sizing: border-box;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px, rgba(17, 17, 26, 0.05) 0px 0px 32px;
+
+}
+#navbar label {
+    font-weight: bold;
 }
 
 #navbar a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 
 #left {
@@ -113,12 +132,14 @@ body {
 
 .categories {
     text-align: left;
-    line-height: 0px;
     font-size: 12px;
     color: gray;
     font-weight: lighter;
 }
 
+.categories p, h3 {
+    margin: 5px 0px;
+}
 .categories p:hover {
     color: black;
     font-weight: bold;
@@ -248,7 +269,8 @@ sup {
 }
 
 #right>div:first-child {
-    padding: 7px 20px;
+    width: 50%;
+    padding: 7px 10px;
     border-radius: 5px;
     background-color: #f5f5f6;
     display: flex;
@@ -280,7 +302,6 @@ sup {
     font-size: 12px;
     text-align: center;
     cursor: pointer;
-
 }
 
 .rightSideIcons>img {
@@ -294,7 +315,7 @@ sup {
 
 #signin {
     display: none;
-    padding: 20px 50px 20px 0px;
+    padding: 20px 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -411,6 +432,9 @@ sup {
     #subMenu > ul{
         width: 400px;
         overflow: scroll;
+    }
+    #right>div:first-child {
+        width: 100%;
     }
 
   }
