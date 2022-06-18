@@ -1,3 +1,8 @@
+let bag = document.querySelector(".bag");
+bag.addEventListener("click", function () {
+   window.location.href = "bag.html";
+});
+
 document.querySelector("#btn").addEventListener("click", login);
 function login() {
    window.location.href = "login or  signup.html";
