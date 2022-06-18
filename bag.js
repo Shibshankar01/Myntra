@@ -1,4 +1,4 @@
-// toggle with offer show more
+// toggle  with offer show more
 
 document.querySelector(".more-text").addEventListener("click", (event) => {
    let moreText = document.querySelector(".more-text");

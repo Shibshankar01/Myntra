@@ -62,6 +62,7 @@ body {
 
 #left > div:nth-child(3):hover {
    border-bottom: 5px solid #e84393;
+
    padding: 30px 15px 25px 15px;
 }
 

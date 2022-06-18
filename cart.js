@@ -23,6 +23,7 @@ let obj = {
 localStorage.setItem("singleItemView", JSON.stringify(obj));
 
 displayData();
+
 function displayData() {
    let singleItemData = JSON.parse(localStorage.getItem("singleItemView")) || [];
    document.querySelector(".pdtitle").innerText = singleItemData.brand;
