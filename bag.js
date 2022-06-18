@@ -306,7 +306,7 @@ function updatePriceblock() {
    } else {
       document.querySelector(".donation-price").parentNode.style.display = "none";
    }
-   console.log(typeof totalAmt, typeof covidDon);
+
    orderAmt = Number.parseFloat(totalAmt + covidDon + 99).toFixed(2);
    document.querySelector(".priceDetail-total").innerText = "₹" + orderAmt;
 }
@@ -333,6 +333,6 @@ document.querySelector(".order-btn").addEventListener("click", () => {
    let allOrderData = JSON.parse(localStorage.getItem("orderData")) || [];
    allOrderData.push(orderData);
    console.log(allOrderData);
-   //localStorage.setItem("orderData", JSON.stringify(allOrderData));
-   // window.location.href = "address.html";
+   localStorage.setItem("orderData", JSON.stringify(allOrderData));
+   window.location.href = "address.html";
 });
