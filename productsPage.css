@@ -102,3 +102,10 @@
     color: #878b94;
     font-size: 16px;
 }
+
+#sortSection{
+    margin-top: 25px;
+}
+#leftTab>h3+h3{
+    margin-top: 40px;
+}

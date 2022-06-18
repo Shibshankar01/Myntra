@@ -22,6 +22,8 @@ let spanTwo = document.createElement("span");
 spanTwo.innerText=clickedOn+"s Items"
 secondHeadingSpanTwo.before(spanTwo)
 
+let filteredDataFromLS=JSON.parse(localStorage.getItem("filteredProducts"))||[]
+
 let sortSelect = document.querySelector("#sort");
 sortSelect.addEventListener("change", sort);
 
@@ -73,38 +75,76 @@ function singleItemView(product) {
 }
 
 function sort() {
+   let filteredList = JSON.parse(localStorage.getItem("filteredProducts")) || [];  
+   // can you do the rest of the task?
+   // let me do some testing first.
+   // it is working fine we need to implement same in filter as well
    if(sortSelect.value=="sortDiscount"){
-      filteredData.sort(function(a, b){
+      filteredList.sort(function(a, b){
          return b.discount-a.discount;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPriceAscending") {
-      filteredData.sort(function(a, b){
+      filteredList.sort(function(a, b){
          return a.variant_price-b.variant_price;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPriceDescending") {
-      filteredData.sort(function(a,b){
+      filteredList.sort(function(a,b){
          return b.variant_price-a.variant_price;
       });
-      displayProducts(filteredData);
+      displayProducts(filteredList);
    }else if (sortSelect.value=="sortPopularity") {
-      filteredData.sort(function(a,b){
+      filteredList.sort(function(a,b){
          return b.counter-a.counter;
       });
-      displayProducts(filteredData)
+      displayProducts(filteredList)
    }else{
       window.location.reload();
    }
+   console.log(filteredList);
 }
-
 function filterSize() {
+   let filteredDataFromLS = localStorage.parse(localStorage.getItem("filteredProducts")) || [];
+   // here
    if (filterSizeSelect.value!="") {
-      let filterSizeList = filteredData.filter(function(elem){
+      let filterSizeList = filteredDataFromLS.filter(function(elem){
          return elem.size == filterSizeSelect.value;
       });
       displayProducts(filterSizeList);
    }else{
       displayProducts(filteredData);
    }
+
+}
+
+let checkBoxOne=document.querySelector("#one")
+checkBoxOne.addEventListener("click",filterBrand)
+
+let checkBoxTwo=document.querySelector("#two")
+checkBoxTwo.addEventListener("click",filterBrand)
+
+let checkBoxThree=document.querySelector("#three")
+checkBoxThree.addEventListener("click",filterBrand)
+filterBrand()
+function filterBrand(){
+   let filteredBrand=filteredData.filter(function(elem){
+      
+      if(checkBoxThree.checked==true){
+         return elem.brand==document.querySelector("#three").value
+      }
+      if(checkBoxTwo.checked==true){
+         return elem.brand==document.querySelector("#two").value
+      }
+      if(checkBoxOne.checked==true){
+         return elem.brand==document.querySelector("#one").value
+      }
+      
+      
+      return true
+   })
+   
+
+   displayProducts(filteredBrand)
+   localStorage.setItem("filteredProducts", JSON.stringify(filteredBrand))
 }
