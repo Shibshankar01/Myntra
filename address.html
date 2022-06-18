@@ -11,7 +11,8 @@
    <title>ADDRESS</title>
    <link rel="stylesheet" href="MyntraIcons.css" />
    <link rel="stylesheet" href="address.css" />
-   <link rel="stylesheet" href="add.css" />
+   <!-- <link rel="stylesheet" href="add.css" /> -->
+   
 </head>
 
 <body>
@@ -44,11 +45,23 @@
                <div id="pin-alert">
                   <!-- pin code madatory alert -->
                </div>
-               <input type="text" name="" id="Address" placeholder="Address(House No, Building,Street, Area)*">
+               <input type="text" name="" id="address" placeholder="Address(House No, Building,Street, Area)*">
                <input type="text" name="" id="locality" placeholder="Locality/Town">
                <div id="city-state">
-                  <div>City/District*</div>
-                  <div>State*</div>
+                  <div>
+                     <select name="" id="city" class="select">
+                        <option value="">City/Town</option>
+                        <option value="Raipur">Raipur</option>
+                        <option value="Bilaspur">Bilaspur</option>
+                     </select>
+                  </div>
+                  <div>
+                     <select name="" id="state" class="select">
+                        <option value="">State</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Delhi">Delhi</option>
+                     </select>
+                  </div>
                </div>
                <h5 class="">SAVE ADDRESS AS</h5>
                <div id="save-address-as">
@@ -94,5 +107,5 @@
    </div>
    </div>
 </body>
-
+<script src="address.js"></script>
 </html>
