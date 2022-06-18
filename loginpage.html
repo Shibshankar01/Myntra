@@ -1,530 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Myntra</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
-
-#navbar {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    box-sizing: border-box;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px, rgba(17, 17, 26, 0.05) 0px 0px 32px;
-}
-
-#navbar a {
-    text-decoration: none;
-    color: black;
-}
-
-#left {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-#left>img {
-    width: 50px;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    margin: 0px 30px 0px 30px;
-}
-
-#left>ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-}
-
-#left>div {
-    padding: 30px 15px;
-    font-size: 13px;
-    cursor: pointer;
-    text-align: center;
-}
-
-#left>div:nth-child(2):hover {
-    border-bottom: 5px solid red;
-    padding: 30px 15px 25px 15px;
-}
-
-#left>div:nth-child(3):hover {
-    border-bottom: 5px solid #e84393;
-    padding: 30px 15px 25px 15px;
-}
-
-#left>div:nth-child(4):hover {
-    border-bottom: 5px solid rgb(255, 123, 0);
-    padding: 30px 15px 25px 15px;
-}
-
-#left>div:nth-child(5):hover {
-    border-bottom: 5px solid #f1c40f;
-    padding: 30px 15px 25px 15px;
-}
-
-#left>div:nth-child(6):hover {
-    border-bottom: 5px solid #00b894;
-    padding: 30px 15px 25px 15px;
-}
-
-#left>div:nth-child(7):hover {
-    border-bottom: 5px solid orangered;
-    padding: 30px 15px 25px 15px;
-}
-
-#subMenu {
-    display: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
-#subMenu li {
-    list-style: none;
-    text-align: left;
-    line-height: 25px;
-    color: gray;
-}
-
-#subMenu ul {
-    display: flex;
-    padding: 0px 10px;
-}
-
-#subMenu ul>div {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding: 10px 20px;
-
-}
-
-.categories {
-    text-align: left;
-    line-height: 0px;
-    font-size: 12px;
-    color: gray;
-    font-weight: lighter;
-}
-
-.categories p:hover {
-    color: black;
-    font-weight: bold;
-}
-
-.categories hr {
-    width: 180px;
-}
-
-#men:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-    left: 100px;
-}
-
-#men .categories h3 {
-    color: red;
-}
-
-#women:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-    left: 100px;
-}
-
-#women .categories h3 {
-    color: #e84393;
-}
-
-#kids:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-    left: 100px;
-}
-
-#kids .categories h3 {
-    color: rgb(255, 123, 0);
-}
-#homeLiving:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-    left: 100px;
-}
-
-#homeLiving .categories h3 {
-    color: #f1c40f;
-}
-
-#beauty:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-    left: 100px;
-}
-
-#beauty .categories h3 {
-    color: #00b894;
-}
-
-sup {
-    color: red;
-    font-size: 10px;
-}
-
-#studio:hover #subMenu {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 79px;
-    left: 370px;
-
-}
-
-#studio .categories h3 {
-    color: orangered;
-
-}
-
-#studio {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#studioBanner {
-    width: 550px;
-    margin: 10px 0px 20px 0px;
-}
-
-#studio button {
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-    background-color: white;
-    border: none;
-    border-radius: 2px;
-    margin: 0px 0px 10px 0px;
-    cursor: pointer;
-}
-
-#studio button span {
-    font-size: 20px;
-}
-
-
-
-
-#right {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#right>div:first-child {
-    padding: 7px 20px;
-    border-radius: 5px;
-    background-color: #f5f5f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 30px;
-}
-
-#right>div:first-child img {
-    width: 18px;
-}
-
-#right input {
-    width: 80%;
-    border: none;
-    outline: none;
-    padding: 5px;
-    margin-left: 10px;
-    color: #727389;
-    background-color: #f5f5f6;
-}
-
-.rightSideIcons {
-    padding: 20px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    text-align: center;
-    cursor: pointer;
-
-}
-
-.rightSideIcons>img {
-    width: 20px;
-}
-
-.profile:hover {
-    border-bottom: 5px solid red;
-    padding: 20px 15px 15px 15px;
-}
-
-#signin {
-    display: none;
-    padding: 20px 50px 20px 0px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
-#signin h3 {
-    margin: 0px;
-    color: black;
-    font-size: 14px;
-}
-
-#signin p {
-    margin: 0px 0px 10px 0px;
-    color: gray;
-    font-weight: lighter;
-}
-
-#signin li {
-    list-style: none;
-    text-align: left;
-    line-height: 25px;
-    color: gray;
-}
-
-#signin li:hover {
-    color: black;
-    font-weight: bold;
-}
-
-.profile:hover #signin {
-    display: block;
-    position: absolute;
-    background-color: white;
-    top: 78.2px;
-}
-
-#signin button {
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: red;
-    font-weight: bold;
-    background-color: white;
-    border: none;
-    border-radius: 2px;
-    margin: 0px 0px 10px 0px;
-    cursor: pointer;
-}
-
-#signin button:hover {
-    border: 1px solid red;
-    padding: 9px 19px;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 1300px) {
-   
-    #homeLiving {
-        display: none;
-    }
-    #subMenu > ul{
-        width: 600px;
-        overflow: scroll;
-    }
-}
-  /* Medium Screen */
-@media only screen and (min-width: 320px) and (max-width: 1000px) {
-    #left {
-        width: 40%;
-        margin: 0px 10px;
-    }
-    #homeLiving {
-        display: none;
-    }
-    #beauty {
-        display: none;
-    }
-    #studio {
-        display: none;
-    }
-    #right {
-        width: 60%;
-    }
-    
-    #subMenu > ul{
-        width: 500px;
-        overflow: scroll;
-    }
-    
-  }
-
-
-  /* Small Screen */
-  @media only screen and (min-width: 320px) and (max-width: 699px) {
-    #left {
-        width: 40%;
-        margin: 0px 10px;
-    }
-    #kids {
-        display: none;
-    }
-    #homeLiving {
-        display: none;
-    }
-    #beauty {
-        display: none;
-    }
-    #studio {
-        display: none;
-    }
-    #right {
-        width: 40%;
-    }
-    #right > div {
-        display: none;
-    }
-    #subMenu > ul{
-        width: 400px;
-        overflow: scroll;
-    }
-
-  }
-
-  @media only screen and (min-width: 0px) and (max-width: 500px) {
-   
-    #left {
-        width: 100%;
-    }
-    #kids {
-        display: none;
-    }
-    #homeLiving {
-        display: none;
-    }
-    #beauty {
-        display: none;
-    }
-    #studio {
-        display: none;
-    }
-    #right {
-        display: none;
-    }
-    #subMenu > ul{
-        width: 300px;
-        overflow: scroll;
-    }
-    #subMenu > ul{
-        width: 300px;
-        overflow: scroll;
-    }
-}
-
-
-
-/* #homepage {
-    height: 1000px;
-    background-color: #f0f0f0;
-} */
-        body{
-            background-color: antiquewhite;
+        @font-face {
+            font-family: "Whitney";
+            src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+            src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+                url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+                url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
         }
-        #main{
-           display: grid;
-           grid-template-columns:repeat(1,30%);
-           grid-template-rows:600px;
-           justify-content: center;
-    
-           margin-top: 100px;
-    
-        
 
+        * {
+            font-family: "Whitney";
+            padding: 0px;
+            margin: 0px;
         }
-        #main>div{
-         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-         background-color: white;
-         margin-top: 30px;
-         margin-bottom: 30px;
-        
-         
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fdeeef;
         }
-        #password{
-            padding: 20px 180px 20px 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            border-radius: 20px;
-            font-size: 20px;
-            margin-top: 30px;
-        }
-       
-        #email{
-            padding: 20px 180px 20px 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            border-radius: 20px;
-            font-size: 20px;
-            margin-top: 30px;
-        }
-       
-        button{
+
+        #navbar {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            width: 100%;
             display: flex;
-            justify-content: center;
-            padding: 20px 150px 20px 150px;
-            margin: auto;
-            margin-top: 30px;
-            background-color: red;
-            color: white;
-            border: 1px solid red;
-            font-size: 20px;
-            cursor: pointer;
-            margin-top: 60px;
-            border-radius: 20px;
-
+            justify-content: space-evenly;
+            align-items: center;
+            box-sizing: border-box;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px, rgba(17, 17, 26, 0.05) 0px 0px 32px;
 
         }
-        h1{
+
+        #navbar label {
+            font-weight: bold;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #left {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        #left>img {
+            width: 50px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            margin: 0px 30px 0px 30px;
+        }
+
+        #left>ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #left>div {
+            padding: 30px 15px;
+            font-size: 13px;
+            cursor: pointer;
             text-align: center;
         }
-       
-           
-          
+
+        #left>div:nth-child(2):hover {
+            border-bottom: 5px solid red;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(3):hover {
+            border-bottom: 5px solid #e84393;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(4):hover {
+            border-bottom: 5px solid rgb(255, 123, 0);
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(5):hover {
+            border-bottom: 5px solid #f1c40f;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(6):hover {
+            border-bottom: 5px solid #00b894;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(7):hover {
+            border-bottom: 5px solid orangered;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #subMenu {
+            display: none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #subMenu li {
+            list-style: none;
+            text-align: left;
+            line-height: 25px;
+            color: gray;
+        }
+
+        #subMenu ul {
+            display: flex;
+            padding: 0px 10px;
+        }
+
+        #subMenu ul>div {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 10px 20px;
+
+        }
+
+        .categories {
+            text-align: left;
+            font-size: 12px;
+            color: gray;
+            font-weight: lighter;
+        }
+
+        .categories p,
+        h3 {
+            margin: 5px 0px;
+        }
+
+        .categories p:hover {
+            color: black;
+            font-weight: bold;
+        }
+
+        .categories hr {
+            width: 180px;
+        }
+
+        #men:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #men .categories h3 {
+            color: red;
+        }
+
+        #women:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #women .categories h3 {
+            color: #e84393;
+        }
+
+        #kids:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #kids .categories h3 {
+            color: rgb(255, 123, 0);
+        }
+
+        #homeLiving:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #homeLiving .categories h3 {
+            color: #f1c40f;
+        }
+
+        #beauty:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #beauty .categories h3 {
+            color: #00b894;
+        }
+
+        sup {
+            color: red;
+            font-size: 10px;
+        }
+
+        #studio:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 79px;
+            left: 370px;
+
+        }
+
+        #studio .categories h3 {
+            color: orangered;
+
+        }
+
+        #studio {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #studioBanner {
+            width: 550px;
+            margin: 10px 0px 20px 0px;
+        }
+
+        #studio button {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            border-radius: 2px;
+            margin: 0px 0px 10px 0px;
+            cursor: pointer;
+        }
+
+        #studio button span {
+            font-size: 20px;
+        }
+
+
+
+
+        #right {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #right>div:first-child {
+            width: 50%;
+            padding: 7px 10px;
+            border-radius: 5px;
+            background-color: #f5f5f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+        }
+
+        #right>div:first-child img {
+            width: 18px;
+        }
+
+        #right input {
+            width: 80%;
+            border: none;
+            outline: none;
+            padding: 5px;
+            margin-left: 10px;
+            color: #727389;
+            background-color: #f5f5f6;
+        }
+
+        .rightSideIcons {
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .rightSideIcons>img {
+            width: 20px;
+        }
+
+        .profile:hover {
+            border-bottom: 5px solid red;
+            padding: 20px 15px 15px 15px;
+        }
+
+        #signin {
+            display: none;
+            padding: 20px 30px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #signin h3 {
+            margin: 0px;
+            color: black;
+            font-size: 14px;
+        }
+
+        #signin p {
+            margin: 0px 0px 10px 0px;
+            color: gray;
+            font-weight: lighter;
+        }
+
+        #signin li {
+            list-style: none;
+            text-align: left;
+            line-height: 25px;
+            color: gray;
+        }
+
+        #signin li:hover {
+            color: black;
+            font-weight: bold;
+        }
+
+        .profile:hover #signin {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+        }
+
+        #signin button {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: red;
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            border-radius: 2px;
+            margin: 0px 0px 10px 0px;
+            cursor: pointer;
+        }
+
+        #signin button:hover {
+            border: 1px solid red;
+            padding: 9px 19px;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 1300px) {
+
+            #homeLiving {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 600px;
+                overflow: scroll;
+            }
+        }
+
+        /* Medium Screen */
+        @media only screen and (min-width: 320px) and (max-width: 1000px) {
+            #left {
+                width: 40%;
+                margin: 0px 10px;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                width: 60%;
+            }
+
+            #subMenu>ul {
+                width: 500px;
+                overflow: scroll;
+            }
+
+        }
+
+
+        /* Small Screen */
+        @media only screen and (min-width: 320px) and (max-width: 699px) {
+            #left {
+                width: 40%;
+                margin: 0px 10px;
+            }
+
+            #kids {
+                display: none;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                width: 40%;
+            }
+
+            #right>div {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 400px;
+                overflow: scroll;
+            }
+
+            #right>div:first-child {
+                width: 100%;
+            }
+
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 500px) {
+
+            #left {
+                width: 100%;
+            }
+
+            #kids {
+                display: none;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 300px;
+                overflow: scroll;
+            }
+
+            #subMenu>ul {
+                width: 300px;
+                overflow: scroll;
+            }
+        }
+
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 300px;
+            margin: auto;
+            margin-top: 30px;
+            padding: 20px 30px;
+            background-color: white;
+        }
+
+        #main Input {
+            width: 250px;
+            font-size: 16px;
+            padding: 10px 20px;
+            color: #3e4152;
+            outline: none;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+        #gen {
+            margin: 10px 0px;
+            width: 290px;
+            font-size: 16px;
+            padding: 10px;
+            color: #3e4152;
+            outline: none;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+
+        #Login {
+            margin: 10px 0px;
+            width: 295px;
+            display: block;
+            padding: 10px 0px;
+            background-color: #ff3f6c;
+            color: white;
+            font-weight: bolder;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 2px;
+            outline: none;
+            border: none;
+        }
+
+        #main h2 {
+            margin: 20px 0px;
+        }
     </style>
 </head>
+
 <body>
     <div id="navbar">
 
@@ -1114,7 +1149,7 @@ sup {
                         <li>
                             <h3>Welcome</h3>
                             <p>To access account and manage orders</p>
-                            <button id="btn"  type="submit">LOGIN/SIGNUP</button>
+                            <button id="btn" type="submit">LOGIN/SIGNUP</button>
                         </li>
                         <hr>
                         <li>Order</li>
@@ -1148,65 +1183,66 @@ sup {
     <div id="homepage"></div>
 
     <div id="main">
-        <div>
-            <h1>Login page</h1>
+        <h2>Log In</h2>
 
-            <input id="password"type="text" placeholder="Enter Password"><br/>
-            <input type="text" id="email" placeholder="Email"><br/>
-            <button id="om">Login</button><br/>
-        </div>
-    
-     
+        <input type="text" id="email" placeholder="Email"><br />
+        <input id="password" type="text" placeholder="Enter Password"><br />
+
+        <button id="Login">Log In</button><br />
+
+
+
     </div>
 </body>
+
 </html>
 <script>
-    loginpagedata=JSON.parse(localStorage.getItem("loginorsignupdata"))||[]
-    document.querySelector("#om").addEventListener("click",login)
-    
-    function login(){
-        logindata={
-            givenpassword:document.querySelector("#password").value,
-            givenemail:document.querySelector("#email").value,
+    loginpagedata = JSON.parse(localStorage.getItem("loginorsignupdata")) || []
+    document.querySelector("#Login").addEventListener("click", login)
+
+    function login() {
+        logindata = {
+            givenpassword: document.querySelector("#password").value,
+            givenemail: document.querySelector("#email").value,
         }
         loginpagedata.push(logindata)
-        if(checklogin(logindata.givenemail,logindata.givenpassword)==true){
-            localStorage.setItem("loginmembers",JSON.stringify(logindata))
-         alert("WELCOME TO MYNTRA")
-         checkname(logindata.givenemail,logindata.givenpassword)
-           
-         
+        if (checklogin(logindata.givenemail, logindata.givenpassword) == true) {
+            localStorage.setItem("loginmembers", JSON.stringify(logindata))
+            window.location.href = "HomePage.html"
+            checkname(logindata.givenemail)
+
+
         }
-        else{
+        else {
             alert("credentials are wrong")
         }
-        
-             
-            
-        
 
-        function checklogin(givenemail,givenpassword){
-            filtered=loginpagedata.filter(function(ele){
-                return ele.EMAIL==givenemail && ele.PASSWORD==givenpassword
-                
+
+
+
+
+        function checklogin(givenemail, givenpassword) {
+            filtered = loginpagedata.filter(function (ele) {
+                return ele.EMAIL == givenemail && ele.PASSWORD == givenpassword
+
 
             })
-            if(filtered.length>0){
+            if (filtered.length > 0) {
                 return true
-            }else{
+            } else {
                 return false
             }
         }
-        function checkname(givenmail,givenpassword){
-            currentuser=loginpagedata.filter(function(elem){
-                return elem.EMAIL==givenmail && elem.PASSWORD==givenpassword
+        function checkname(givenmail) {
+            currentuser = loginpagedata.filter(function (elem) {
+                return elem.EMAIL == givenmail
             })
             console.log(currentuser)
-           localStorage.setItem("name",JSON.stringify(currentuser.NAME))
-           localStorage.setItem("mobile",JSON.stringify(currentuser.MOBILE))
+            localStorage.setItem("name", JSON.stringify(currentuser.NAME))
+            localStorage.setItem("mobile", JSON.stringify(currentuser.MOBILE))
         }
-        
+
     }
 
-    
+
 </script>
