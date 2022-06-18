@@ -55,6 +55,7 @@ document.querySelector(".order-btn").addEventListener("click", (event) => {
    setTimeout(() => {
       payMsg.innerText = "Payment Varification Successfull. You will redirect to Home Page...";
       localStorage.removeItem("orderData");
+      localStorage.removeItem("cartItems");
    }, 1500);
 
    setTimeout(() => {
