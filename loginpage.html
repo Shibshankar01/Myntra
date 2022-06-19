@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra</title>
+    <style>
+        @font-face {
+            font-family: "Whitney";
+            src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+            src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+                url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+                url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        * {
+            font-family: "Whitney";
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fdeeef;
+        }
+
+        #navbar {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-sizing: border-box;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px, rgba(17, 17, 26, 0.05) 0px 0px 32px;
+
+        }
+
+        #navbar label {
+            font-weight: bold;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #left {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        #left>img {
+            width: 50px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            margin: 0px 30px 0px 30px;
+        }
+
+        #left>ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #left>div {
+            padding: 30px 15px;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #left>div:nth-child(2):hover {
+            border-bottom: 5px solid red;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(3):hover {
+            border-bottom: 5px solid #e84393;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(4):hover {
+            border-bottom: 5px solid rgb(255, 123, 0);
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(5):hover {
+            border-bottom: 5px solid #f1c40f;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(6):hover {
+            border-bottom: 5px solid #00b894;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #left>div:nth-child(7):hover {
+            border-bottom: 5px solid orangered;
+            padding: 30px 15px 25px 15px;
+        }
+
+        #subMenu {
+            display: none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #subMenu li {
+            list-style: none;
+            text-align: left;
+            line-height: 25px;
+            color: gray;
+        }
+
+        #subMenu ul {
+            display: flex;
+            padding: 0px 10px;
+        }
+
+        #subMenu ul>div {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 10px 20px;
+
+        }
+
+        .categories {
+            text-align: left;
+            font-size: 12px;
+            color: gray;
+            font-weight: lighter;
+        }
+
+        .categories p,
+        h3 {
+            margin: 5px 0px;
+        }
+
+        .categories p:hover {
+            color: black;
+            font-weight: bold;
+        }
+
+        .categories hr {
+            width: 180px;
+        }
+
+        #men:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #men .categories h3 {
+            color: red;
+        }
+
+        #women:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #women .categories h3 {
+            color: #e84393;
+        }
+
+        #kids:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #kids .categories h3 {
+            color: rgb(255, 123, 0);
+        }
+
+        #homeLiving:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #homeLiving .categories h3 {
+            color: #f1c40f;
+        }
+
+        #beauty:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+            left: 100px;
+        }
+
+        #beauty .categories h3 {
+            color: #00b894;
+        }
+
+        sup {
+            color: red;
+            font-size: 10px;
+        }
+
+        #studio:hover #subMenu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 79px;
+            left: 370px;
+
+        }
+
+        #studio .categories h3 {
+            color: orangered;
+
+        }
+
+        #studio {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #studioBanner {
+            width: 550px;
+            margin: 10px 0px 20px 0px;
+        }
+
+        #studio button {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            border-radius: 2px;
+            margin: 0px 0px 10px 0px;
+            cursor: pointer;
+        }
+
+        #studio button span {
+            font-size: 20px;
+        }
+
+
+
+
+        #right {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #right>div:first-child {
+            width: 50%;
+            padding: 7px 10px;
+            border-radius: 5px;
+            background-color: #f5f5f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+        }
+
+        #right>div:first-child img {
+            width: 18px;
+        }
+
+        #right input {
+            width: 80%;
+            border: none;
+            outline: none;
+            padding: 5px;
+            margin-left: 10px;
+            color: #727389;
+            background-color: #f5f5f6;
+        }
+
+        .rightSideIcons {
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .rightSideIcons>img {
+            width: 20px;
+        }
+
+        .profile:hover {
+            border-bottom: 5px solid red;
+            padding: 20px 15px 15px 15px;
+        }
+
+        #signin {
+            display: none;
+            padding: 20px 30px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        #signin h3 {
+            margin: 0px;
+            color: black;
+            font-size: 14px;
+        }
+
+        #signin p {
+            margin: 0px 0px 10px 0px;
+            color: gray;
+            font-weight: lighter;
+        }
+
+        #signin li {
+            list-style: none;
+            text-align: left;
+            line-height: 25px;
+            color: gray;
+        }
+
+        #signin li:hover {
+            color: black;
+            font-weight: bold;
+        }
+
+        .profile:hover #signin {
+            display: block;
+            position: absolute;
+            background-color: white;
+            top: 78.2px;
+        }
+
+        #signin button {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: red;
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            border-radius: 2px;
+            margin: 0px 0px 10px 0px;
+            cursor: pointer;
+        }
+
+        #signin button:hover {
+            border: 1px solid red;
+            padding: 9px 19px;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 1300px) {
+
+            #homeLiving {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 600px;
+                overflow: scroll;
+            }
+        }
+
+        /* Medium Screen */
+        @media only screen and (min-width: 320px) and (max-width: 1000px) {
+            #left {
+                width: 40%;
+                margin: 0px 10px;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                width: 60%;
+            }
+
+            #subMenu>ul {
+                width: 500px;
+                overflow: scroll;
+            }
+
+        }
+
+
+        /* Small Screen */
+        @media only screen and (min-width: 320px) and (max-width: 699px) {
+            #left {
+                width: 40%;
+                margin: 0px 10px;
+            }
+
+            #kids {
+                display: none;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                width: 40%;
+            }
+
+            #right>div {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 400px;
+                overflow: scroll;
+            }
+
+            #right>div:first-child {
+                width: 100%;
+            }
+
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 500px) {
+
+            #left {
+                width: 100%;
+            }
+
+            #kids {
+                display: none;
+            }
+
+            #homeLiving {
+                display: none;
+            }
+
+            #beauty {
+                display: none;
+            }
+
+            #studio {
+                display: none;
+            }
+
+            #right {
+                display: none;
+            }
+
+            #subMenu>ul {
+                width: 300px;
+                overflow: scroll;
+            }
+
+            #subMenu>ul {
+                width: 300px;
+                overflow: scroll;
+            }
+        }
+
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 300px;
+            margin: auto;
+            margin-top: 30px;
+            padding: 20px 30px;
+            background-color: white;
+        }
+
+        #main Input {
+            width: 250px;
+            font-size: 16px;
+            padding: 10px 20px;
+            color: #3e4152;
+            outline: none;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+        #gen {
+            margin: 10px 0px;
+            width: 290px;
+            font-size: 16px;
+            padding: 10px;
+            color: #3e4152;
+            outline: none;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+
+        #Login {
+            margin: 10px 0px;
+            width: 295px;
+            display: block;
+            padding: 10px 0px;
+            background-color: #ff3f6c;
+            color: white;
+            font-weight: bolder;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 2px;
+            outline: none;
+            border: none;
+        }
+
+        #main h2 {
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+
+        <div id="left">
+
+            <img src="images/Myntra_logo.png" alt="Myntra_logo">
+
+            <div id="men"><a href="#">MEN</a>
+                <div id="subMenu">
+                    <ul>
+                        <div class="categories">
+                            <h3>Topwear</h3>
+                            <p>T-Shirts</p>
+                            <p>Casual Shirts</p>
+                            <p>Formal Shirts</p>
+                            <p>Sweatshirts</p>
+                            <p>Sweaters</p>
+                            <p>Jackets</p>
+                            <p>Blazers & Coats</p>
+                            <p>Suits</p>
+                            <p>Rain Jackets</p>
+
+                            <hr>
+
+                            <h3>Indian & Festive Wear</h3>
+                            <p>Kurtas & Kurta Sets</p>
+                            <p>Sherwanis</p>
+                            <p>Nehru Jackets</p>
+                            <p>Dhotis</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Bottomwear</h3>
+                            <p>Jeans</p>
+                            <p>Casual Trousers</p>
+                            <p>Formal Trousers</p>
+                            <p>Shorts</p>
+                            <p>Track Pants & Joggers</p>
+
+                            <hr>
+
+                            <h3>Innerwear & Sleepwear</h3>
+                            <p>Briefs & Trunks</p>
+                            <p>Boxers</p>
+                            <p>Vests</p>
+                            <p>Sleepwear & Loungewear</p>
+                            <p>Thermals</p>
+
+                            <hr>
+
+                            <h3>Plus Size</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Footwear</h3>
+                            <p>Casual Shoes</p>
+                            <p>Sports Shoes</p>
+                            <p>Formal Shoes</p>
+                            <p>Sneakers</p>
+                            <p>Sandals & Floaters</p>
+                            <p>Flip Flops</p>
+                            <p>Socks</p>
+
+                            <hr>
+
+                            <h3>Personal Care & Grooming</h3>
+                            <h3>Sunglasses & Frames</h3>
+                            <h3>Watches</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Sports & Active Wear</h3>
+                            <p>Sports Shoes</p>
+                            <p>Sports Sandals</p>
+                            <p>Active T-Shirts</p>
+                            <p>Track Pants & Shorts</p>
+                            <p>Tracksuits</p>
+                            <p>Jackets & Sweatshirts</p>
+                            <p>Sports Accessories</p>
+                            <p>Swimwear</p>
+
+                            <hr>
+
+                            <h3>Gadgets</h3>
+                            <p>Smart Wearables</p>
+                            <p>Fitness Gadgets</p>
+                            <p>Headphones</p>
+                            <p>Speakers</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Fasion Accessories</h3>
+                            <p>Wallets</p>
+                            <p>Belts</p>
+                            <p>Perfumes & Body Mists</p>
+                            <p>Trimmers</p>
+                            <p>Deodorants</p>
+                            <p>Ties, Cufflinks & Pocket Squares</p>
+                            <p>Accessory Gift Sets</p>
+                            <p>Caps & Hats</p>
+                            <p>Mufflers, Scarves & Gloves</p>
+                            <p>Phone Cases</p>
+                            <p>Rings & Wristwear</p>
+                            <p>Helmets</p>
+
+                            <hr>
+
+                            <h3>Bags & Backpacks</h3>
+                            <h3>Luggages & Trolleys</h3>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="women"><a href="#">WOMEN</a>
+                <div id="subMenu">
+                    <ul>
+                        <div class="categories">
+                            <h3>Indian & Fusion Wear</h3>
+
+                            <p>Kurtas & Suits</p>
+                            <p>Kurtis, Tunics & Tops</p>
+                            <p>Sarees</p>
+                            <p>Ethnic Wear</p>
+                            <p>Leggings, Salwars & Churidars</p>
+                            <p>Skirts & Palazzos</p>
+                            <p>Dress Materials</p>
+                            <p>Lehenga Cholis</p>
+                            <p>Dupattas & Shawls</p>
+                            <p>Jackets</p>
+
+                            <hr>
+
+                            <h3>Belts, Scarves & More</h3>
+                            <h3>Watches & Wearables</h3>
+
+                        </div>
+                        <div class="categories">
+                            <h3>Western Wear</h3>
+
+                            <p>Dresses</p>
+                            <p>Tops</p>
+                            <p>Tshirts</p>
+                            <p>Jeans</p>
+                            <p>Trousers & Capris</p>
+                            <p>Shorts & Skirts</p>
+                            <p>Co-ords</p>
+                            <p>Playsuits</p>
+                            <p>Jumpsuits</p>
+                            <p>Shrugs</p>
+                            <p>Sweaters & Sweatshirts</p>
+                            <p>Jackets & Coats</p>
+                            <p>Blazers & Waistcoats</p>
+
+                            <hr>
+
+                            <h3>Plus Size</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Maternity</h3>
+
+                            <h3>Sunglasses & Frames</h3>
+                            <h3>Footwear</h3>
+                            <p>Flats</p>
+                            <p>Casual Shoes</p>
+                            <p>Heels</p>
+                            <p>Boots</p>
+                            <p>Sports Shoes & Floaters</p>
+
+                            <hr>
+
+                            <h3>Sports & Active Wear</h3>
+
+                            <p>Clothing</p>
+                            <p>Footwear</p>
+                            <p>Sports Accessories</p>
+                            <p>Sports Equipment</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Lingerie & Sleepwear</h3>
+
+                            <p>Bra</p>
+                            <p>Briefs</p>
+                            <p>Shapewear</p>
+                            <p>Sleepwear & Loungewear</p>
+                            <p>Swimwear</p>
+                            <p>Camisoles & Thermals</p>
+
+                            <hr>
+
+                            <h3>Beauty & Personal Care</h3>
+
+                            <p>Makeup</p>
+                            <p>Skincare</p>
+                            <p>Premium Beauty</p>
+                            <p>Lipsticks</p>
+                            <p>Fragrances</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Gadgets</h3>
+
+                            <p>Smart Wearables</p>
+                            <p>Fitness Gadgets</p>
+                            <p>Headphones</p>
+                            <p>Speakers</p>
+
+                            <hr>
+
+                            <h3>Jewellery</h3>
+
+                            <p>Fashion Jewellery</p>
+                            <p>Fine Jewellery</p>
+                            <p>Earrings</p>
+
+                            <hr>
+
+                            <h3>Backpacks</h3>
+
+                            <h3>Handbags, Bags & Wallets</h3>
+                            <h3>Luggages & Trolleys</h3>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="kids"><a href="#">KIDS</a>
+                <div id="subMenu">
+                    <ul>
+                        <div class="categories">
+                            <h3>Boys Clothing</h3>
+
+                            <p>T-Shirts</p>
+                            <p>Shirts</p>
+                            <p>Shorts</p>
+                            <p>Jeans</p>
+                            <p>Trousers</p>
+                            <p>Clothing Sets</p>
+                            <p>Ethnic Wear</p>
+                            <p>Track Pants & Pyjamas</p>
+                            <hr>
+                            <p>Jacket & Sweater</p>
+                            <p>Sweatshirts</p>
+                            <p>Party Wear</p>
+                            <p>Innerwear & Thermals</p>
+                            <p>Nightwear & Loungewear</p>
+                            <p>Value Packs</p>
+
+                        </div>
+                        <div class="categories">
+                            <h3>Girls Clothing</h3>
+
+                            <p>Dresses</p>
+                            <p>TOp5</p>
+                            <p>Tshirts</p>
+                            <p>Clothing Sets</p>
+                            <p>Lehenga choli</p>
+                            <p>Kurta Sets</p>
+                            <p>Party wear</p>
+                            <p>Dungarees & Jumpsuits</p>
+                            <p>Skirts & shorts</p>
+                            <p>Tights & Leggings</p>
+                            <p>Jeans, Trousers & Capris</p>
+                            <hr>
+                            <p>Jacket & Sweater</p>
+                            <p>Sweatshirts</p>
+                            <p>Innerwear & Thermals</p>
+                            <p>Nightwear & Loungewear</p>
+                            <p>Value Packs</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Footwear</h3>
+
+                            <p>Casual Shoes</p>
+                            <p>Flipflops</p>
+                            <p>Sports Shoes</p>
+                            <p>Flats</p>
+                            <p>Sandals</p>
+                            <p>Heels</p>
+                            <p>School Shoes</p>
+                            <p>Socks</p>
+
+                            <hr>
+
+                            <h3>Toys</h3>
+
+                            <p>Learning & Development</p>
+                            <p>Activity Toys</p>
+                            <p>Soft Toys</p>
+                            <p>Action Figure / Play set</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Infants</h3>
+
+                            <p>Bodysuits</p>
+                            <p>Rompers & Sleepsuits</p>
+                            <p>Clothing Sets</p>
+                            <p>Tshirts & Tops</p>
+                            <p>Dresses</p>
+                            <p>Bottom wear</p>
+                            <p>Winter Wear</p>
+                            <p>Innerwear & Sleepwear</p>
+                            <p>Infant Care</p>
+
+                            <hr>
+
+                            <h3>Home & Bath</h3>
+
+                            <h3>Personal Care</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Kids Accessories</h3>
+
+                            <p>Bags & Backpacks</p>
+                            <p>Watches</p>
+                            <p>Jewellery & Hair accessory</p>
+                            <p>Sunglasses</p>
+                            <p>Masks & Protective Gears</p>
+                            <p>Caps & Hats</p>
+
+                            <hr>
+
+                            <h3>Brands</h3>
+
+                            <p>H&M</p>
+                            <p>Max Kids</p>
+                            <p>Pantaloons</p>
+                            <p>United Colors Of Benetton Kids</p>
+                            <p>US Polo Assn. Kids</p>
+                            <p>Mothercare</p>
+                            <p>HRX</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="homeLiving"><a href="#">HOME & LIVING</a>
+                <div id="subMenu">
+                    <ul>
+                        <div class="categories">
+                            <h3>Bed Linen a Furnishing</h3>
+
+                            <p>Bed Runners</p>
+                            <p>Mattress Protectors</p>
+                            <p>Bedsheets</p>
+                            <p>Bedding Sets</p>
+                            <p>Blankets Quilts & Dohars</p>
+                            <p>Pillows & Pillow Covers</p>
+                            <p>Bed Covers</p>
+                            <p>Diwan Sets</p>
+                            <p>Chair Pads & Covers</p>
+                            <p>Sofa Covers</p>
+
+                            <hr>
+
+                            <h3>Flooring</h3>
+
+                            <p>Floor Runners</p>
+                            <p>Carpets</p>
+                            <p>Floor Mats & Dhurries</p>
+                            <p>Door Mats</p>
+
+                        </div>
+                        <div class="categories">
+                            <h3>Bath</h3>
+
+                            <p>Bath Towels</p>
+                            <p>Hand & Face Towels</p>
+                            <p>Beach Towels</p>
+                            <p>Towels Set</p>
+                            <p>Bath Rugs</p>
+                            <p>Bath Robes</p>
+                            <p>Bathroom Accessories</p>
+                            <p>Shower Curtains</p>
+
+                            <hr>
+
+                            <h3>Lamps & Lighting</h3>
+
+                            <p>Floor Lamps</p>
+                            <p>Ceiling Lamps</p>
+                            <p>Table Lamps</p>
+                            <p>Wall Lamps</p>
+                            <p>Outdoor Lamps</p>
+                            <p>String Lights</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Home Décor</h3>
+
+                            <p>Plants & Planters</p>
+                            <p>Aromas & Candles</p>
+                            <p>Clocks</p>
+                            <p>Mirrors</p>
+                            <p>Wall Décor</p>
+                            <p>Festive Decor</p>
+                            <p>Pooja Essentials</p>
+                            <p>Wall Shelves</p>
+                            <p>Fountains</p>
+                            <p>Showpieces & Vases</p>
+                            <p>Ottoman</p>
+
+                            <hr>
+
+                            <h3>Cushions & Cushion Covers</h3>
+                            <h3>Curtains</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Home Gift Sets</h3>
+
+                            <h3>Kitchen & Table</h3>
+
+                            <p>Table Runners</p>
+                            <p>Dinnerware & Serveware</p>
+                            <p>Cups and Mugs</p>
+                            <p>Bakeware & Cookware</p>
+                            <p>Kitchen Storage & Tools</p>
+                            <p>Bar & Drinkware</p>
+                            <p>Table Covers & Furnishings</p>
+
+                            <hr>
+
+                            <p>Storage</p>
+
+                            <p>Bins</p>
+                            <p>Hangers</p>
+                            <p>Organisers</p>
+                            <p>Hooks & Holders</p>
+                            <p>Laundry Bags</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Brands</h3>
+
+                            <p>H&M</p>
+                            <p>Marks & Spencer</p>
+                            <p>Home Centre</p>
+                            <p>Spaces</p>
+                            <p>D'Decor</p>
+                            <p>Story@Home</p>
+                            <p>Pure Home & Living</p>
+                            <p>Swayam</p>
+                            <p>Raymond Home</p>
+                            <p>Maspar</p>
+                            <p>Trident</p>
+                            <p>Cortina</p>
+                            <p>Random</p>
+                            <p>Ellementry</p>
+                            <p>ROMEE</p>
+                            <p>SEJ by Nisha Gupta</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="beauty"><a href="#">BEAUTY</a>
+                <div id="subMenu">
+                    <ul>
+                        <div class="categories">
+                            <h3>Makeup</h3>
+
+                            <p>Lipstick</p>
+                            <p>Lip Gloss</p>
+                            <p>Lip Liner</p>
+                            <hr>
+                            <p>Mascara</p>
+                            <p>Eyeliner</p>
+                            <p>Kajal</p>
+                            <p>Eyeshadow</p>
+                            <p>Foundation</p>
+                            <p>Primer</p>
+                            <p>Concealer</p>
+                            <p>Compact</p>
+                            <p>Nail Polish</p>
+
+                        </div>
+                        <div class="categories">
+                            <h3>Skincare, Bath & Body</h3>
+
+                            <p>Face Moisturiser</p>
+                            <p>Cleanser</p>
+                            <p>Masks & Peel</p>
+                            <p>Sunscreen</p>
+                            <p>Serum</p>
+                            <p>Face Wash</p>
+                            <p>Eye Cream</p>
+                            <p>Lip Balm</p>
+                            <p>Body Lotion</p>
+                            <p>Body Wash</p>
+                            <p>Body Scrub</p>
+                            <p>Hand Cream</p>
+
+                            <hr>
+
+                            <h3>Baby Care</h3>
+                            <h3>Masks</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Haircare</h3>
+
+                            <p>Shampoo</p>
+                            <p>Conditioner</p>
+                            <p>Hair Cream</p>
+                            <p>Hair Oil</p>
+                            <p>Hair Gel</p>
+                            <p>Hair Color</p>
+                            <p>Hair Serum</p>
+                            <p>Hair Accessory</p>
+
+                            <hr>
+
+                            <h3>Fragrances</h3>
+
+                            <p>Perfume</p>
+                            <p>Deodorant</p>
+                            <p>Body Mist</p>
+                        </div>
+                        <div class="categories">
+                            <h3>Appliances</h3>
+
+                            <p>Hair Straightener</p>
+                            <p>Hair Dryer</p>
+                            <p>Epilator</p>
+
+                            <hr>
+
+                            <h3>Men's Grooming</h3>
+
+                            <p>Trimmers</p>
+                            <p>Beard Oil</p>
+                            <p>Hair Wax</p>
+
+                            <hr>
+
+                            <h3>Beauty Gift & Makeup Set</h3>
+
+                            <p>Beauty Gift</p>
+                            <p>Makeup Kit</p>
+
+                            <hr>
+
+                            <h3>Premium Beauty</h3>
+                            <h3>Wellness & Hygiene</h3>
+                        </div>
+                        <div class="categories">
+                            <h3>Top Brands</h3>
+
+                            <p>Lakme</p>
+                            <p>Maybelline</p>
+                            <p>LOreal</p>
+                            <p>Philips</p>
+                            <p>Bath & Body Works</p>
+                            <p>THE BODY SHOP</p>
+                            <p>Biotique</p>
+                            <p>Mamaearth</p>
+                            <p>MCaffeine</p>
+                            <p>Nivea</p>
+                            <p>Lotus Herbals</p>
+                            <p>LOreal Professionnel</p>
+                            <hr>
+                            <p>KAMA AYURVEDA</p>
+                            <p>M.A.C</p>
+                            <p>Forest Essentials</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="studio"><a href="#">STUDIO <sup>NEW</sup></a>
+                <div id="subMenu">
+                    <ul id="studio">
+                        <img src="images/studio-logo-new.svg" alt="studio_logo">
+                        <p>Your daily inspiration for everything fashion</p>
+                        <img id="studioBanner" src="images/sudio-nav-banner.png" alt="nav_banner">
+                        <button>EXPLORE STUDIO <span>&#8250;</span></button>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="right">
+            <div>
+                <img src="images/search_logo.png" alt="">
+                <input type="text" placeholder="Search for products, brands and more">
+            </div>
+            <div class="rightSideIcons profile">
+                <img src="images/profile_logo.png" alt="">
+                <label for="">Profile</label>
+                <div id="signin">
+                    <ul>
+                        <li>
+                            <h3>Welcome</h3>
+                            <p>To access account and manage orders</p>
+                            <button id="btn" type="submit">LOGIN/SIGNUP</button>
+                        </li>
+                        <hr>
+                        <li>Order</li>
+                        <li>Wishlist</li>
+                        <li>Gift Cards</li>
+                        <li>Contact Us</li>
+                        <li>Myntra Insider</li>
+                        <hr>
+                        <li>Myntra Credit</li>
+                        <li>Coupons</li>
+                        <li>Saved Cards</li>
+                        <li>Saved Addresses</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="rightSideIcons">
+                <img src="images/heart_logo.png" alt="">
+                <label for="">Wishlist</label>
+            </div>
+            <div class="rightSideIcons">
+                <img src="images/shopping_bag_logo.png" alt="">
+                <label for="">Bag</label>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div id="homepage"></div>
+
+    <div id="main">
+        <h2>Log In</h2>
+
+        <input type="text" id="email" placeholder="Email"><br />
+        <input id="password" type="text" placeholder="Enter Password"><br />
+
+        <button id="Login">Log In</button><br />
+
+
+
+    </div>
+</body>
+
+</html>
+<script>
+    loginpagedata = JSON.parse(localStorage.getItem("loginorsignupdata")) || []
+    document.querySelector("#Login").addEventListener("click", login)
+
+    function login() {
+        logindata = {
+            givenpassword: document.querySelector("#password").value,
+            givenemail: document.querySelector("#email").value,
+        }
+        loginpagedata.push(logindata)
+        if (checklogin(logindata.givenemail, logindata.givenpassword) == true) {
+            localStorage.setItem("loginmembers", JSON.stringify(logindata))
+            window.location.href = "HomePage.html"
+            // checkname(logindata.givenemail)
+
+
+        }
+        else {
+            alert("credentials are wrong")
+        }
+
+
+
+
+
+        function checklogin(givenemail, givenpassword) {
+            filtered = loginpagedata.filter(function (ele) {
+                return ele.EMAIL == givenemail && ele.PASSWORD == givenpassword
+
+
+            })
+            if (filtered.length > 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+        function checkname(givenmail) {
+            currentuser = loginpagedata.filter(function (elem) {
+                return elem.EMAIL == givenmail
+            })
+            console.log(currentuser)
+            localStorage.setItem("name", JSON.stringify(currentuser.NAME))
+            localStorage.setItem("mobile", JSON.stringify(currentuser.MOBILE))
+        }
+
+    }
+
+
+</script>

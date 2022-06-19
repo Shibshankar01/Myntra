@@ -1,4 +1,4 @@
-/* This contain Myntra icons  */
+/* This contain Myntra icons */
 
 .myntraweb-sprite {
    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
@@ -159,11 +159,6 @@
    width: 23px;
    height: 22px;
 }
-.sprites-OfferIcon {
-   background-position: 763px 0px;
-   width: 20px;
-   height: 20px;
-}
 .sprites-similarProductsIcon {
    background-position: -142px -58px;
    width: 24px;
@@ -178,65 +173,4 @@
    width: 17px;
    height: 17px;
    background-position: -128px 0;
-}
-.sprites-headerLogo {
-   width: 53px;
-   height: 36px;
-   background-position: -462px 0;
-}
-.sprites-logo {
-   width: 112px;
-   height: 40px;
-   background-position: -462px 0;
-}
-.sprites-back {
-   background-position: -880px 0;
-   width: 17px;
-   height: 16px;
-}
-.sprites-brightcoveMute {
-   background-position: -213px -78px;
-   width: 25px;
-   height: 25px;
-}
-.sprites-brightcoveUnMute {
-   background-position: -190px -78px;
-   width: 25px;
-   height: 25px;
-}
-.sprites-brightcovePlay {
-   background-position: -143px -79px;
-   width: 23px;
-   height: 23px;
-}
-.sprites-brightcoveReplay {
-   background-position: -167px -79.5px;
-   width: 23px;
-   height: 23px;
-}
-.sprites-brightcoveExpand {
-   background-position: -237px -78px;
-   width: 25px;
-   height: 25px;
-}
-.sprites-brightcoveShrink {
-   background-position: -260px -75px;
-   width: 25px;
-   height: 25px;
-}
-
-.sprites-collapseIcon {
-   background-position: 103px -92px;
-   width: 13px;
-   height: 10px;
-}
-.sprites-expandIcon {
-   background-position: 128px -92px;
-   width: 13px;
-   height: 10px;
-}
-.sprites-greenTickIcon {
-   background-position: -49px -19px;
-   height: 12px;
-   width: 12px;
 }

@@ -1,0 +1,268 @@
+@font-face {
+   font-family: "Whitney";
+   src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+   src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+      url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+      url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+   font-weight: 400;
+   font-display: swap;
+   font-style: normal;
+}
+* {
+   font-family: "Whitney";
+   padding: 0px;
+   margin: 2px;
+}
+/* navbar */
+.navbar-header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 60px;
+   border-bottom: 1px solid #f5f5f6;
+   letter-spacing: 2px;
+   font-weight: 600;
+}
+.navbar-secureContainer,
+.navbar-logo {
+   width: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 12px;
+}
+.navbar-checkout-steps {
+   width: 40%;
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+   font-size: 12px;
+}
+.divider {
+   border-top: 1px dashed #696b79;
+   height: 4px;
+   width: 30px;
+   margin-top: 10px;
+}
+.active {
+   color: #20bd99;
+   border-bottom: 2px solid #20bd99;
+}
+
+/* block css */
+.block {
+   display: flex;
+   max-width: 1000px;
+   margin: auto;
+}
+
+/* left block */
+.block > .left-block {
+   width: 60%;
+   padding-right: 15px;
+   border-right: 1px solid #eaeaec;
+   padding-top: 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.offerStrip {
+   padding: 16px;
+   border-radius: 4px;
+   border: 1px solid #eaeaec;
+}
+.offer-title {
+   font-weight: 700;
+   font-size: 12px;
+   color: #535766;
+}
+.offer-items > li {
+   font-size: 13px;
+   color: #282c3f;
+   margin-left: 6%;
+}
+.offer-hide {
+   display: none;
+   font-size: 13px;
+   color: #282c3f;
+   margin-left: 6%;
+}
+
+.more-text {
+   margin-left: 6%;
+   color: #ff3f6c;
+   font-size: 14px;
+   cursor: pointer;
+   font-weight: 600;
+}
+
+.payment-Heading {
+   font-weight: 600;
+   margin: 15px 0 15px 25px;
+   color: #424553;
+}
+.paymentContainer {
+   margin: 0px;
+}
+.payment-item {
+   display: flex;
+   border: 1px solid #eaeaec;
+   margin: 0px;
+}
+.payment-itemLeft {
+   width: 30%;
+   background-color: #f4f4f5;
+   margin: 0px;
+}
+.paymentOptions {
+   margin: 0px;
+   border-bottom: 1px solid #eaeaec;
+   cursor: pointer;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   color: #424553;
+}
+.paymentOptions-Card {
+   background-color: white;
+}
+.payment-itemRight {
+   width: 70%;
+   padding: 8px 20px;
+}
+.cardDetailsContainer {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 10px;
+}
+.cardExpiryContainer {
+   display: flex;
+   justify-content: space-between;
+}
+input {
+   height: 35px;
+   outline: none;
+   border: 1px solid #d4d5d9;
+   padding: 0px 10px;
+   border-radius: 2px;
+}
+.cardOTPContainer {
+   display: flex;
+   justify-content: center;
+   gap: 15px;
+}
+.cardotpBtn {
+   /* display: none; */
+   font-size: 12px;
+   padding: 4px 16px;
+   font-weight: 600;
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(255, 63, 108);
+   border: 1px solid #ff527b;
+   cursor: pointer;
+}
+.cardOTP {
+   display: none;
+}
+.OTPVerificationMsg {
+   display: none;
+   color: teal;
+   font-weight: 600;
+   font-size: 14px;
+   text-align: center;
+}
+/* Right Block */
+.block > .right-block {
+   width: 45%;
+   padding-left: 15px;
+   padding-top: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.order-btn {
+   display: none;
+   width: 100%;
+   letter-spacing: 1px;
+   font-size: 14px;
+   font-weight: 600;
+   border-radius: 2px;
+   border: none;
+   padding: 10px 16px;
+   background-color: rgb(255, 63, 108);
+   color: rgb(255, 255, 255);
+   cursor: pointer;
+}
+
+.priceBlock-container {
+   position: relative;
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 15px;
+}
+.priceBlock-priceHeader {
+   margin-bottom: 15px;
+   font-weight: 600;
+   font-size: 12px;
+   color: #535766;
+}
+.priceBreakUp-orderSummary {
+   font-size: 14px;
+   color: #282c3f;
+}
+.priceDetail-row {
+   display: flex;
+   justify-content: space-between;
+}
+.priceDetail-value {
+   font-weight: 500;
+}
+.total-container {
+   font-weight: 600;
+}
+.PaymentVerificationMsg {
+   display: none;
+   color: teal;
+   font-weight: 600;
+   font-size: 14px;
+   text-align: center;
+}
+
+/* footer */
+.bagfootercontainer {
+   margin-top: 50px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 30px;
+   /* position: absolute; */
+   bottom: 15px;
+}
+.bagfooter-images {
+   width: 80%;
+}
+.bagfooter-images > img {
+   width: 6%;
+}
+.bagfooter-help {
+   width: 15%;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+/* Quick CSS */
+
+.btn-222 {
+   margin-top: 8px;
+   font-size: 12px;
+   font-weight: 600;
+   border-radius: 2px;
+   border: none;
+   background-color: transparent;
+   color: rgb(255, 63, 108);
+   cursor: pointer;
+}

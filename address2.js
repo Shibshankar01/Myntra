@@ -25,23 +25,18 @@ function updatePriceblock() {
    document.querySelector(".convenience-price").innerText = "₹" + orderData[0].convenience_amt;
    document.querySelector(".priceDetail-total").innerText = "₹" + orderData[0].order_amt;
 }
-document.querySelector("form").addEventListener("submit",addfun);
-let x =  document.querySelector("form");
-let addArr=JSON.parse(localStorage.getItem("addDetails"))||[];
-function addfun(event){
-    event.preventDefault();
-    let obj={
-        name:x.name.value,
-        mobile:x.mobile.value,
-        pin:x.pin.value,
-        address:x.address.value,
-        locality:x.locality.value,
-        city:x.city.value,
-        state:x.state.value,
-    }
-    localStorage.setItem("addDetails",JSON.stringify(obj));
-    window.location.href="address2.html";
+
+let addDetails = JSON.parse(localStorage.getItem("addDetails"));
+document.querySelector("#name").innerHTML = addDetails.name;
+document.querySelector("#add").innerHTML = addDetails.address;
+document.querySelector("#loc").innerHTML = addDetails.locality;
+document.querySelector("#city").innerHTML = addDetails.city;
+document.querySelector("#state").innerHTML = addDetails.state;
+document.querySelector("#pin").innerHTML = addDetails.pin;
+document.querySelector("#mob").innerHTML = addDetails.mobile;
+
+document.querySelector("#continue").addEventListener("click",payFun);
+function payFun(event){
+    window.location.href="payment.html";
 
 }
-
-
