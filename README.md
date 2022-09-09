@@ -25,7 +25,8 @@
 - Address, Payement and Checkout feature done with LocalStorage.
 
 ## Link ✨
-https://grand-tarsier-842e30.netlify.app/ 
+   https://grand-tarsier-842e30.netlify.app/ 
+   
 ## Contributors  😇
 
 - 👤 [Sanjay Gupta](https://github.com/IamSanjayGupta)
