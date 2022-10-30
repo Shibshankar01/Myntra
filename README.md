@@ -36,3 +36,33 @@
 - 👤 [Bhupendra Chandrakar](https://github.com/bkcjanta)
 - 👤 [Pushkaraj Lolusare](https://github.com/p9168247913)
 - 👤 [Theja Swaroop](https://github.com/Swarooptheja)
+
+
+## Screenshots  📸
+
+
+#### Homepage
+
+<img src="https://raw.githubusercontent.com/IamSanjayGupta/IamSanjayGupta.github.io/main/src/assets/myntra/1.png" alt="homepage" />
+
+
+#### Products
+
+<img src="https://raw.githubusercontent.com/IamSanjayGupta/IamSanjayGupta.github.io/main/src/assets/myntra/2.png" alt="Products" />
+
+
+#### View Products
+
+<img src="https://raw.githubusercontent.com/IamSanjayGupta/IamSanjayGupta.github.io/main/src/assets/myntra/3.png" alt="view" />
+
+
+#### cart 
+
+<img src="https://raw.githubusercontent.com/IamSanjayGupta/IamSanjayGupta.github.io/main/src/assets/myntra/4.png" alt="cart" />
+
+
+#### payment 
+
+<img src="https://raw.githubusercontent.com/IamSanjayGupta/IamSanjayGupta.github.io/main/src/assets/myntra/5.png" alt="payment" />
+
+
