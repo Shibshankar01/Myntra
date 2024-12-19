@@ -22,7 +22,7 @@
 - Dynamic Products using locally created json data.
 - Filteration and sorting in real time.
 - All the product description, prices, discounts, Coupons, donations are updated in real time.
-- Address, Payement and Checkout feature done with LocalStorage.
+- Address, Payment and Checkout feature done with LocalStorage.
 
 ## Link ✨
    https://grand-tarsier-842e30.netlify.app/ 
